@@ -1,0 +1,135 @@
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #f9fbfd);
+    color: #333;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== HEADER ===== */
+h2 {
+    text-align: center;
+    color: #0b3c5d;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/* ===== FORM ===== */
+form label {
+    font-weight: 600;
+    margin-top: 15px;
+    display: block;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #0b3c5d;
+}
+
+/* ===== BUTTON ===== */
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    background: linear-gradient(135deg, #0b3c5d, #1e88e5);
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(30, 136, 229, 0.4);
+}
+
+/* ===== SUMMARY ===== */
+.summary {
+    margin-top: 25px;
+    font-weight: bold;
+    color: #0b3c5d;
+}
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #0b3c5d;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ===== POSSIBILITY COLORS ===== */
+.safe {
+    background-color: #e8f5e9;
+}
+
+.moderate {
+    background-color: #fff8e1;
+}
+
+.ambitious {
+    background-color: #fdecea;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #777;
+    text-align: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .container {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MHT-CET College Predictor | Maharashtra Engineering Admissions</title>
+
+    <!-- BASIC META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO META -->
+    <meta name="description"
+          content="MHT-CET College Predictor for Maharashtra engineering admissions. Get college and branch recommendations based on rank, category, and university type.">
+
+    <meta name="keywords"
+          content="MHT CET college predictor, CET cutoff Maharashtra, engineering admission predictor, COEP VJTI admission, CET counselling tool">
+
+    <meta name="author" content="MHT-CET Recommendation System">
+
+    <!-- SOCIAL / TRUST -->
+    <meta property="og:title" content="MHT-CET College Recommendation System">
+    <meta property="og:description"
+          content="Accurate academic guidance for MHT-CET aspirants using previous years’ cutoff trends.">
+    <meta property="og:type" content="website">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>MHT-CET College Recommendation System</h2>
+    <p class="subtitle">
+        An academic guidance tool for Maharashtra engineering aspirants based on previous cutoff trends.
+    </p>
+
+    <form method="post">
+
+        <label>Merit Rank:</label>
+        <input type="number" name="rank" placeholder="Enter your CET merit rank" required>
+
+        <label>Category (default: GENERAL):</label>
+        <select name="category">
+            <option value="">GENERAL</option>
+            <option>GENERAL</option>
+            <option>OBC</option>
+            <option>SC</option>
+            <option>ST</option>
+            <option>EWS</option>
+            <option>VJDT</option>
+        </select>
+
+        <label>University Type:</label>
+        <select name="seat_type">
+            <option value="HU" selected>Home University</option>
+            <option value="OHU">Other Than Home University</option>
+        </select>
+
+        <label>Arrange Results By:</label>
+        <select name="sort_by" required>
+            <option value="college">Top Colleges First</option>
+            <option value="branch">Branch-wise</option>
+            <option value="chance">Admission Possibility</option>
+        </select>
+
+        <button type="submit">Get Recommendations</button>
+    </form>
+
+    {% if summary %}
+        <p class="summary">{{ summary }}</p>
+    {% endif %}
+
+    {% if results %}
+    <table>
+        <tr>
+            <th>College</th>
+            <th>Branch</th>
+            <th>Category</th>
+            <th>University</th>
+            <th>Your %ile</th>
+            <th>Margin</th>
+            <th>Possibility</th>
+        </tr>
+
+        {% for r in results %}
+        <tr class="{{ r.chance | lower }}">
+            <td>{{ r.college }}</td>
+            <td>{{ r.branch }}</td>
+            <td>{{ r.category }}</td>
+            <td>{{ "Home" if r.seat_type == "HU" else "Other" }}</td>
+            <td>{{ r.percentile }}</td>
+            <td>{{ r.margin }}</td>
+            <td>{{ r.chance }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+    <div class="footer">
+        Disclaimer: This tool provides guidance based on previous years’ cutoff data.
+        Final admissions depend on official CAP rounds and merit lists released by CET Cell Maharashtra.
+    </div>
+
+</div>
+
+</body>
+</html>
