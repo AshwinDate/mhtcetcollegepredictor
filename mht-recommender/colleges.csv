@@ -1,0 +1,376 @@
+college,branch,category,seat_type,cutoff
+VJTI Mumbai,Computer Science,GENERAL,HU,99.6
+VJTI Mumbai,Computer Science,OBC,HU,98.0
+VJTI Mumbai,Computer Science,SC,HU,88.5
+VJTI Mumbai,Computer Science,ST,HU,82.0
+VJTI Mumbai,Computer Science,EWS,HU,98.2
+VJTI Mumbai,Computer Science,VJDT,HU,86.0
+VJTI Mumbai,Information Technology,GENERAL,HU,99.1
+VJTI Mumbai,Information Technology,OBC,HU,97.5
+VJTI Mumbai,Information Technology,SC,HU,87.0
+VJTI Mumbai,Information Technology,ST,HU,80.0
+VJTI Mumbai,Information Technology,EWS,HU,97.8
+VJTI Mumbai,Information Technology,VJDT,HU,84.0
+VJTI Mumbai,Electronics & Telecommunication,GENERAL,HU,98.4
+VJTI Mumbai,Electronics & Telecommunication,OBC,HU,96.8
+VJTI Mumbai,Electronics & Telecommunication,SC,HU,85.0
+VJTI Mumbai,Electronics & Telecommunication,ST,HU,78.0
+VJTI Mumbai,Electronics & Telecommunication,EWS,HU,97.0
+VJTI Mumbai,Electronics & Telecommunication,VJDT,HU,82.0
+VJTI Mumbai,Instrumentation Engineering,GENERAL,HU,97.9
+VJTI Mumbai,Instrumentation Engineering,OBC,HU,96.0
+VJTI Mumbai,Instrumentation Engineering,SC,HU,83.5
+VJTI Mumbai,Instrumentation Engineering,ST,HU,76.5
+VJTI Mumbai,Instrumentation Engineering,EWS,HU,96.5
+VJTI Mumbai,Instrumentation Engineering,VJDT,HU,81.0
+VJTI Mumbai,Mechanical Engineering,GENERAL,HU,95.5
+VJTI Mumbai,Mechanical Engineering,OBC,HU,93.0
+VJTI Mumbai,Mechanical Engineering,SC,HU,80.0
+VJTI Mumbai,Mechanical Engineering,ST,HU,73.0
+VJTI Mumbai,Mechanical Engineering,EWS,HU,93.5
+VJTI Mumbai,Mechanical Engineering,VJDT,HU,77.0
+VJTI Mumbai,Civil Engineering,GENERAL,HU,93.5
+VJTI Mumbai,Civil Engineering,OBC,HU,91.0
+VJTI Mumbai,Civil Engineering,SC,HU,78.0
+VJTI Mumbai,Civil Engineering,ST,HU,70.0
+VJTI Mumbai,Civil Engineering,EWS,HU,91.5
+VJTI Mumbai,Civil Engineering,VJDT,HU,74.0
+
+COEP Tech Pune,Computer Science,GENERAL,HU,99.6
+COEP Tech Pune,Computer Science,OBC,HU,98.2
+COEP Tech Pune,Computer Science,SC,HU,95.0
+COEP Tech Pune,Computer Science,ST,HU,85.0
+COEP Tech Pune,Computer Science,EWS,HU,98.4
+COEP Tech Pune,Computer Science,VJDT,HU,90.0
+COEP Tech Pune,Information Technology,GENERAL,HU,99.2
+COEP Tech Pune,Information Technology,OBC,HU,97.8
+COEP Tech Pune,Information Technology,SC,HU,93.0
+COEP Tech Pune,Information Technology,ST,HU,83.0
+COEP Tech Pune,Information Technology,EWS,HU,98.0
+COEP Tech Pune,Information Technology,VJDT,HU,88.0
+COEP Tech Pune,Electronics & Telecommunication,GENERAL,HU,98.6
+COEP Tech Pune,Electronics & Telecommunication,OBC,HU,97.0
+COEP Tech Pune,Electronics & Telecommunication,SC,HU,90.0
+COEP Tech Pune,Electronics & Telecommunication,ST,HU,80.0
+COEP Tech Pune,Electronics & Telecommunication,EWS,HU,97.5
+COEP Tech Pune,Electronics & Telecommunication,VJDT,HU,85.0
+COEP Tech Pune,Instrumentation Engineering,GENERAL,HU,98.0
+COEP Tech Pune,Instrumentation Engineering,OBC,HU,96.5
+COEP Tech Pune,Instrumentation Engineering,SC,HU,88.0
+COEP Tech Pune,Instrumentation Engineering,ST,HU,78.0
+COEP Tech Pune,Instrumentation Engineering,EWS,HU,97.0
+COEP Tech Pune,Instrumentation Engineering,VJDT,HU,84.0
+COEP Tech Pune,Mechanical Engineering,GENERAL,HU,96.0
+COEP Tech Pune,Mechanical Engineering,OBC,HU,93.5
+COEP Tech Pune,Mechanical Engineering,SC,HU,85.0
+COEP Tech Pune,Mechanical Engineering,ST,HU,75.0
+COEP Tech Pune,Mechanical Engineering,EWS,HU,94.0
+COEP Tech Pune,Mechanical Engineering,VJDT,HU,80.0
+COEP Tech Pune,Civil Engineering,GENERAL,HU,94.0
+COEP Tech Pune,Civil Engineering,OBC,HU,91.5
+COEP Tech Pune,Civil Engineering,SC,HU,82.0
+COEP Tech Pune,Civil Engineering,ST,HU,72.0
+COEP Tech Pune,Civil Engineering,EWS,HU,92.0
+COEP Tech Pune,Civil Engineering,VJDT,HU,77.0
+
+SPCE Mumbai,Computer Science,GENERAL,HU,96.5
+SPCE Mumbai,Computer Science,OBC,HU,94.0
+SPCE Mumbai,Computer Science,SC,HU,85.0
+SPCE Mumbai,Computer Science,ST,HU,78.0
+SPCE Mumbai,Computer Science,EWS,HU,94.5
+SPCE Mumbai,Computer Science,VJDT,HU,82.0
+SPCE Mumbai,Information Technology,GENERAL,HU,96.0
+SPCE Mumbai,Information Technology,OBC,HU,93.5
+SPCE Mumbai,Information Technology,SC,HU,83.5
+SPCE Mumbai,Information Technology,ST,HU,76.5
+SPCE Mumbai,Information Technology,EWS,HU,94.0
+SPCE Mumbai,Information Technology,VJDT,HU,80.5
+SPCE Mumbai,Electronics & Telecommunication,GENERAL,HU,95.0
+SPCE Mumbai,Electronics & Telecommunication,OBC,HU,92.5
+SPCE Mumbai,Electronics & Telecommunication,SC,HU,82.0
+SPCE Mumbai,Electronics & Telecommunication,ST,HU,75.0
+SPCE Mumbai,Electronics & Telecommunication,EWS,HU,93.0
+SPCE Mumbai,Electronics & Telecommunication,VJDT,HU,79.0
+SPCE Mumbai,Instrumentation Engineering,GENERAL,HU,94.5
+SPCE Mumbai,Instrumentation Engineering,OBC,HU,92.0
+SPCE Mumbai,Instrumentation Engineering,SC,HU,81.0
+SPCE Mumbai,Instrumentation Engineering,ST,HU,74.0
+SPCE Mumbai,Instrumentation Engineering,EWS,HU,92.5
+SPCE Mumbai,Instrumentation Engineering,VJDT,HU,78.0
+SPCE Mumbai,Mechanical Engineering,GENERAL,HU,92.0
+SPCE Mumbai,Mechanical Engineering,OBC,HU,89.5
+SPCE Mumbai,Mechanical Engineering,SC,HU,78.0
+SPCE Mumbai,Mechanical Engineering,ST,HU,70.0
+SPCE Mumbai,Mechanical Engineering,EWS,HU,90.0
+SPCE Mumbai,Mechanical Engineering,VJDT,HU,74.0
+SPCE Mumbai,Civil Engineering,GENERAL,HU,90.0
+SPCE Mumbai,Civil Engineering,OBC,HU,87.5
+SPCE Mumbai,Civil Engineering,SC,HU,75.0
+SPCE Mumbai,Civil Engineering,ST,HU,68.0
+SPCE Mumbai,Civil Engineering,EWS,HU,88.0
+SPCE Mumbai,Civil Engineering,VJDT,HU,72.0
+
+Walchand COE Sangli,Computer Science,GENERAL,HU,95.3
+Walchand COE Sangli,Computer Science,OBC,HU,92.5
+Walchand COE Sangli,Computer Science,SC,HU,85.0
+Walchand COE Sangli,Computer Science,ST,HU,75.0
+Walchand COE Sangli,Computer Science,EWS,HU,93.0
+Walchand COE Sangli,Computer Science,VJDT,HU,82.0
+
+Walchand COE Sangli,Information Technology,GENERAL,HU,94.5
+Walchand COE Sangli,Information Technology,OBC,HU,91.5
+Walchand COE Sangli,Information Technology,SC,HU,83.0
+Walchand COE Sangli,Information Technology,ST,HU,73.0
+Walchand COE Sangli,Information Technology,EWS,HU,92.0
+Walchand COE Sangli,Information Technology,VJDT,HU,80.0
+
+Walchand COE Sangli,Electronics & Telecommunication,GENERAL,HU,93.2
+Walchand COE Sangli,Electronics & Telecommunication,OBC,HU,90.5
+Walchand COE Sangli,Electronics & Telecommunication,SC,HU,82.0
+Walchand COE Sangli,Electronics & Telecommunication,ST,HU,72.0
+Walchand COE Sangli,Electronics & Telecommunication,EWS,HU,91.0
+Walchand COE Sangli,Electronics & Telecommunication,VJDT,HU,79.0
+
+Walchand COE Sangli,Instrumentation Engineering,GENERAL,HU,92.8
+Walchand COE Sangli,Instrumentation Engineering,OBC,HU,90.0
+Walchand COE Sangli,Instrumentation Engineering,SC,HU,81.0
+Walchand COE Sangli,Instrumentation Engineering,ST,HU,71.0
+Walchand COE Sangli,Instrumentation Engineering,EWS,HU,90.5
+Walchand COE Sangli,Instrumentation Engineering,VJDT,HU,78.0
+
+Walchand COE Sangli,Mechanical Engineering,GENERAL,HU,92.0
+Walchand COE Sangli,Mechanical Engineering,OBC,HU,89.5
+Walchand COE Sangli,Mechanical Engineering,SC,HU,80.0
+Walchand COE Sangli,Mechanical Engineering,ST,HU,70.0
+Walchand COE Sangli,Mechanical Engineering,EWS,HU,90.0
+Walchand COE Sangli,Mechanical Engineering,VJDT,HU,75.0
+
+Walchand COE Sangli,Civil Engineering,GENERAL,HU,90.5
+Walchand COE Sangli,Civil Engineering,OBC,HU,88.0
+Walchand COE Sangli,Civil Engineering,SC,HU,78.0
+Walchand COE Sangli,Civil Engineering,ST,HU,68.0
+Walchand COE Sangli,Civil Engineering,EWS,HU,88.5
+Walchand COE Sangli,Civil Engineering,VJDT,HU,72.0
+
+VIT Pune,Computer Science,GENERAL,HU,95.1
+VIT Pune,Computer Science,OBC,HU,92.0
+VIT Pune,Computer Science,SC,HU,84.0
+VIT Pune,Computer Science,ST,HU,74.0
+VIT Pune,Computer Science,EWS,HU,92.5
+VIT Pune,Computer Science,VJDT,HU,80.0
+VIT Pune,Information Technology,GENERAL,HU,94.3
+VIT Pune,Information Technology,OBC,HU,91.0
+VIT Pune,Information Technology,SC,HU,82.0
+VIT Pune,Information Technology,ST,HU,72.0
+VIT Pune,Information Technology,EWS,HU,91.5
+VIT Pune,Information Technology,VJDT,HU,78.0
+VIT Pune,Electronics & Telecommunication,GENERAL,HU,93.0
+VIT Pune,Electronics & Telecommunication,OBC,HU,90.0
+VIT Pune,Electronics & Telecommunication,SC,HU,80.0
+VIT Pune,Electronics & Telecommunication,ST,HU,70.0
+VIT Pune,Electronics & Telecommunication,EWS,HU,90.5
+VIT Pune,Electronics & Telecommunication,VJDT,HU,76.0
+VIT Pune,Instrumentation Engineering,GENERAL,HU,92.5
+VIT Pune,Instrumentation Engineering,OBC,HU,89.5
+VIT Pune,Instrumentation Engineering,SC,HU,79.0
+VIT Pune,Instrumentation Engineering,ST,HU,69.0
+VIT Pune,Instrumentation Engineering,EWS,HU,90.0
+VIT Pune,Instrumentation Engineering,VJDT,HU,75.0
+VIT Pune,Mechanical Engineering,GENERAL,HU,91.5
+VIT Pune,Mechanical Engineering,OBC,HU,88.5
+VIT Pune,Mechanical Engineering,SC,HU,78.0
+VIT Pune,Mechanical Engineering,ST,HU,68.0
+VIT Pune,Mechanical Engineering,EWS,HU,89.0
+VIT Pune,Mechanical Engineering,VJDT,HU,74.0
+VIT Pune,Civil Engineering,GENERAL,HU,89.5
+VIT Pune,Civil Engineering,OBC,HU,86.5
+VIT Pune,Civil Engineering,SC,HU,76.0
+VIT Pune,Civil Engineering,ST,HU,66.0
+VIT Pune,Civil Engineering,EWS,HU,87.0
+VIT Pune,Civil Engineering,VJDT,HU,72.0
+
+PCCOE Pune,Computer Science,GENERAL,HU,94.2
+PCCOE Pune,Computer Science,OBC,HU,91.0
+PCCOE Pune,Computer Science,SC,HU,82.0
+PCCOE Pune,Computer Science,ST,HU,72.0
+PCCOE Pune,Computer Science,EWS,HU,91.5
+PCCOE Pune,Computer Science,VJDT,HU,78.0
+PCCOE Pune,Information Technology,GENERAL,HU,93.5
+PCCOE Pune,Information Technology,OBC,HU,90.5
+PCCOE Pune,Information Technology,SC,HU,80.0
+PCCOE Pune,Information Technology,ST,HU,70.0
+PCCOE Pune,Information Technology,EWS,HU,91.0
+PCCOE Pune,Information Technology,VJDT,HU,76.0
+PCCOE Pune,Electronics & Telecommunication,GENERAL,HU,92.0
+PCCOE Pune,Electronics & Telecommunication,OBC,HU,89.0
+PCCOE Pune,Electronics & Telecommunication,SC,HU,78.0
+PCCOE Pune,Electronics & Telecommunication,ST,HU,68.0
+PCCOE Pune,Electronics & Telecommunication,EWS,HU,89.5
+PCCOE Pune,Electronics & Telecommunication,VJDT,HU,74.0
+PCCOE Pune,Instrumentation Engineering,GENERAL,HU,91.5
+PCCOE Pune,Instrumentation Engineering,OBC,HU,88.0
+PCCOE Pune,Instrumentation Engineering,SC,HU,77.0
+PCCOE Pune,Instrumentation Engineering,ST,HU,67.0
+PCCOE Pune,Instrumentation Engineering,EWS,HU,88.5
+PCCOE Pune,Instrumentation Engineering,VJDT,HU,73.0
+PCCOE Pune,Mechanical Engineering,GENERAL,HU,90.0
+PCCOE Pune,Mechanical Engineering,OBC,HU,87.0
+PCCOE Pune,Mechanical Engineering,SC,HU,76.0
+PCCOE Pune,Mechanical Engineering,ST,HU,66.0
+PCCOE Pune,Mechanical Engineering,EWS,HU,87.5
+PCCOE Pune,Mechanical Engineering,VJDT,HU,72.0
+PCCOE Pune,Civil Engineering,GENERAL,HU,89.0
+PCCOE Pune,Civil Engineering,OBC,HU,86.0
+PCCOE Pune,Civil Engineering,SC,HU,75.0
+PCCOE Pune,Civil Engineering,ST,HU,65.0
+PCCOE Pune,Civil Engineering,EWS,HU,86.5
+PCCOE Pune,Civil Engineering,VJDT,HU,70.0
+
+DJ Sanghvi,Computer Science,GENERAL,OHU,95.0
+DJ Sanghvi,Computer Science,OBC,OHU,92.5
+DJ Sanghvi,Computer Science,SC,OHU,85.0
+DJ Sanghvi,Computer Science,ST,OHU,78.0
+DJ Sanghvi,Computer Science,EWS,OHU,93.0
+DJ Sanghvi,Computer Science,VJDT,OHU,82.0
+DJ Sanghvi,Information Technology,GENERAL,OHU,94.5
+DJ Sanghvi,Information Technology,OBC,OHU,92.0
+DJ Sanghvi,Information Technology,SC,OHU,84.0
+DJ Sanghvi,Information Technology,ST,OHU,77.0
+DJ Sanghvi,Information Technology,EWS,OHU,92.5
+DJ Sanghvi,Information Technology,VJDT,OHU,81.0
+DJ Sanghvi,Electronics & Telecommunication,GENERAL,OHU,93.5
+DJ Sanghvi,Electronics & Telecommunication,OBC,OHU,91.0
+DJ Sanghvi,Electronics & Telecommunication,SC,OHU,83.0
+DJ Sanghvi,Electronics & Telecommunication,ST,OHU,76.0
+DJ Sanghvi,Electronics & Telecommunication,EWS,OHU,91.5
+DJ Sanghvi,Electronics & Telecommunication,VJDT,OHU,80.0
+DJ Sanghvi,Instrumentation Engineering,GENERAL,OHU,93.0
+DJ Sanghvi,Instrumentation Engineering,OBC,OHU,90.5
+DJ Sanghvi,Instrumentation Engineering,SC,OHU,82.0
+DJ Sanghvi,Instrumentation Engineering,ST,OHU,75.0
+DJ Sanghvi,Instrumentation Engineering,EWS,OHU,91.0
+DJ Sanghvi,Instrumentation Engineering,VJDT,OHU,79.0
+DJ Sanghvi,Mechanical Engineering,GENERAL,OHU,91.0
+DJ Sanghvi,Mechanical Engineering,OBC,OHU,88.5
+DJ Sanghvi,Mechanical Engineering,SC,OHU,80.0
+DJ Sanghvi,Mechanical Engineering,ST,OHU,73.0
+DJ Sanghvi,Mechanical Engineering,EWS,OHU,89.0
+DJ Sanghvi,Mechanical Engineering,VJDT,OHU,77.0
+DJ Sanghvi,Civil Engineering,GENERAL,OHU,89.0
+DJ Sanghvi,Civil Engineering,OBC,OHU,86.5
+DJ Sanghvi,Civil Engineering,SC,OHU,78.0
+DJ Sanghvi,Civil Engineering,ST,OHU,71.0
+DJ Sanghvi,Civil Engineering,EWS,OHU,87.0
+DJ Sanghvi,Civil Engineering,VJDT,OHU,75.0
+
+PVG COET Pune,Computer Science,GENERAL,HU,97.0
+PVG COET Pune,Computer Science,OBC,HU,92.0
+PVG COET Pune,Computer Science,SC,HU,80.0
+PVG COET Pune,Computer Science,ST,HU,70.0
+PVG COET Pune,Computer Science,EWS,HU,89.5
+PVG COET Pune,Computer Science,VJDT,HU,76.0
+PVG COET Pune,Information Technology,GENERAL,HU,96.2
+PVG COET Pune,Information Technology,OBC,HU,88.0
+PVG COET Pune,Information Technology,SC,HU,78.5
+PVG COET Pune,Information Technology,ST,HU,68.5
+PVG COET Pune,Information Technology,EWS,HU,88.8
+PVG COET Pune,Information Technology,VJDT,HU,74.5
+PVG COET Pune,Electronics & Telecommunication,GENERAL,HU,95.0
+PVG COET Pune,Electronics & Telecommunication,OBC,HU,87.0
+PVG COET Pune,Electronics & Telecommunication,SC,HU,77.0
+PVG COET Pune,Electronics & Telecommunication,ST,HU,67.0
+PVG COET Pune,Electronics & Telecommunication,EWS,HU,87.5
+PVG COET Pune,Electronics & Telecommunication,VJDT,HU,73.0
+PVG COET Pune,Instrumentation Engineering,GENERAL,HU,89.5
+PVG COET Pune,Instrumentation Engineering,OBC,HU,86.5
+PVG COET Pune,Instrumentation Engineering,SC,HU,76.0
+PVG COET Pune,Instrumentation Engineering,ST,HU,66.0
+PVG COET Pune,Instrumentation Engineering,EWS,HU,87.0
+PVG COET Pune,Instrumentation Engineering,VJDT,HU,72.0
+PVG COET Pune,Mechanical Engineering,GENERAL,HU,94.5
+PVG COET Pune,Mechanical Engineering,OBC,HU,85.5
+PVG COET Pune,Mechanical Engineering,SC,HU,75.0
+PVG COET Pune,Mechanical Engineering,ST,HU,65.0
+PVG COET Pune,Mechanical Engineering,EWS,HU,86.0
+PVG COET Pune,Mechanical Engineering,VJDT,HU,70.0
+PVG COET Pune,Civil Engineering,GENERAL,HU,87.5
+PVG COET Pune,Civil Engineering,OBC,HU,84.5
+PVG COET Pune,Civil Engineering,SC,HU,74.0
+PVG COET Pune,Civil Engineering,ST,HU,64.0
+PVG COET Pune,Civil Engineering,EWS,HU,85.0
+PVG COET Pune,Civil Engineering,VJDT,HU,69.0
+
+AISSMS COE Pune,Computer Science,GENERAL,HU,95.5
+AISSMS COE Pune,Computer Science,OBC,HU,88.5
+AISSMS COE Pune,Computer Science,SC,HU,79.0
+AISSMS COE Pune,Computer Science,ST,HU,69.0
+AISSMS COE Pune,Computer Science,EWS,HU,89.0
+AISSMS COE Pune,Computer Science,VJDT,HU,75.0
+AISSMS COE Pune,Information Technology,GENERAL,HU,94.8
+AISSMS COE Pune,Information Technology,OBC,HU,87.5
+AISSMS COE Pune,Information Technology,SC,HU,78.0
+AISSMS COE Pune,Information Technology,ST,HU,68.0
+AISSMS COE Pune,Information Technology,EWS,HU,88.2
+AISSMS COE Pune,Information Technology,VJDT,HU,74.0
+AISSMS COE Pune,Electronics & Telecommunication,GENERAL,HU,93.5
+AISSMS COE Pune,Electronics & Telecommunication,OBC,HU,86.5
+AISSMS COE Pune,Electronics & Telecommunication,SC,HU,76.5
+AISSMS COE Pune,Electronics & Telecommunication,ST,HU,66.5
+AISSMS COE Pune,Electronics & Telecommunication,EWS,HU,87.0
+AISSMS COE Pune,Electronics & Telecommunication,VJDT,HU,72.5
+AISSMS COE Pune,Instrumentation Engineering,GENERAL,HU,89.0
+AISSMS COE Pune,Instrumentation Engineering,OBC,HU,86.0
+AISSMS COE Pune,Instrumentation Engineering,SC,HU,75.5
+AISSMS COE Pune,Instrumentation Engineering,ST,HU,65.5
+AISSMS COE Pune,Instrumentation Engineering,EWS,HU,86.5
+AISSMS COE Pune,Instrumentation Engineering,VJDT,HU,71.5
+AISSMS COE Pune,Mechanical Engineering,GENERAL,HU,88.0
+AISSMS COE Pune,Mechanical Engineering,OBC,HU,85.0
+AISSMS COE Pune,Mechanical Engineering,SC,HU,74.5
+AISSMS COE Pune,Mechanical Engineering,ST,HU,64.5
+AISSMS COE Pune,Mechanical Engineering,EWS,HU,85.5
+AISSMS COE Pune,Mechanical Engineering,VJDT,HU,69.5
+AISSMS COE Pune,Civil Engineering,GENERAL,HU,87.0
+AISSMS COE Pune,Civil Engineering,OBC,HU,84.0
+AISSMS COE Pune,Civil Engineering,SC,HU,73.5
+AISSMS COE Pune,Civil Engineering,ST,HU,63.5
+AISSMS COE Pune,Civil Engineering,EWS,HU,84.5
+AISSMS COE Pune,Civil Engineering,VJDT,HU,68.5
+
+MIT Pune,Computer Science,GENERAL,HU,95.5
+MIT Pune,Computer Science,OBC,HU,90.5
+MIT Pune,Computer Science,SC,HU,82.0
+MIT Pune,Computer Science,ST,HU,72.0
+MIT Pune,Computer Science,EWS,HU,91.0
+MIT Pune,Computer Science,VJDT,HU,78.0
+MIT Pune,Information Technology,GENERAL,HU,94.8
+MIT Pune,Information Technology,OBC,HU,89.5
+MIT Pune,Information Technology,SC,HU,81.0
+MIT Pune,Information Technology,ST,HU,71.0
+MIT Pune,Information Technology,EWS,HU,90.5
+MIT Pune,Information Technology,VJDT,HU,76.5
+MIT Pune,Electronics & Telecommunication,GENERAL,HU,93.5
+MIT Pune,Electronics & Telecommunication,OBC,HU,88.5
+MIT Pune,Electronics & Telecommunication,SC,HU,80.0
+MIT Pune,Electronics & Telecommunication,ST,HU,70.0
+MIT Pune,Electronics & Telecommunication,EWS,HU,89.0
+MIT Pune,Electronics & Telecommunication,VJDT,HU,75.0
+MIT Pune,Instrumentation Engineering,GENERAL,HU,91.0
+MIT Pune,Instrumentation Engineering,OBC,HU,88.0
+MIT Pune,Instrumentation Engineering,SC,HU,79.0
+MIT Pune,Instrumentation Engineering,ST,HU,69.0
+MIT Pune,Instrumentation Engineering,EWS,HU,88.5
+MIT Pune,Instrumentation Engineering,VJDT,HU,74.0
+MIT Pune,Mechanical Engineering,GENERAL,HU,90.0
+MIT Pune,Mechanical Engineering,OBC,HU,87.0
+MIT Pune,Mechanical Engineering,SC,HU,78.0
+MIT Pune,Mechanical Engineering,ST,HU,68.0
+MIT Pune,Mechanical Engineering,EWS,HU,87.5
+MIT Pune,Mechanical Engineering,VJDT,HU,72.5
+MIT Pune,Civil Engineering,GENERAL,HU,89.0
+MIT Pune,Civil Engineering,OBC,HU,86.0
+MIT Pune,Civil Engineering,SC,HU,77.0
+MIT Pune,Civil Engineering,ST,HU,67.0
+MIT Pune,Civil Engineering,EWS,HU,86.5
+MIT Pune,Civil Engineering,VJDT,HU,71.5
+
