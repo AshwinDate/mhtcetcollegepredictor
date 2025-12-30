@@ -133,3 +133,11 @@ td {
         font-size: 12px;
     }
 }
+.form-card {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+}
