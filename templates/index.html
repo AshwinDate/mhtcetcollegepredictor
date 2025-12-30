@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MHT CET College Predictor</title>
+    <title>MHT CET College Predictor 2025</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
@@ -24,7 +26,6 @@
             <option>SC</option>
             <option>ST</option>
             <option>EWS</option>
-            <option>VJDT</option>
         </select>
 
         <label>University Type</label>
@@ -43,58 +44,38 @@
         <thead>
             <tr>
                 <th>College</th>
-                <th>Branch-wise Admission Possibility</th>
+                <th>Eligible Branches</th>
             </tr>
         </thead>
-
         <tbody>
+
         {% for c in results %}
         <tr>
             <td class="college-name">{{ c.college }}</td>
-            <td>
+            <td class="branch-cell">
 
-                {% if c.safe %}
-                <div class="branch-group safe">
-                    <strong>🟢 Safe to Get</strong>
-                    <ul>
-                        {% for b in c.safe %}
-                        <li>{{ b }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endif %}
+                {% for b in c.safe %}
+                    <span class="branch-pill safe">{{ b }} <small>Safe</small></span>
+                {% endfor %}
 
-                {% if c.moderate %}
-                <div class="branch-group moderate">
-                    <strong>🟡 Moderate Chance</strong>
-                    <ul>
-                        {% for b in c.moderate %}
-                        <li>{{ b }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endif %}
+                {% for b in c.moderate %}
+                    <span class="branch-pill moderate">{{ b }} <small>Moderate</small></span>
+                {% endfor %}
 
-                {% if c.ambitious %}
-                <div class="branch-group ambitious">
-                    <strong>🔴 Hard / Ambitious</strong>
-                    <ul>
-                        {% for b in c.ambitious %}
-                        <li>{{ b }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endif %}
+                {% for b in c.ambitious %}
+                    <span class="branch-pill ambitious">{{ b }} <small>Ambitious</small></span>
+                {% endfor %}
 
             </td>
         </tr>
         {% endfor %}
+
         </tbody>
     </table>
     {% endif %}
 
     <div class="footer">
-        Disclaimer: Guidance based on previous CAP round cutoffs only.
+        Disclaimer: Predictions are indicative only and based on previous CAP round data.
     </div>
 
 </div>

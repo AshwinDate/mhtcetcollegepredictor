@@ -5,7 +5,7 @@ from collections import defaultdict
 app = Flask(__name__)
 
 # =========================
-# COLLEGE PRIORITY (LOWER = BETTER)
+# COLLEGE PRIORITY
 # =========================
 COLLEGE_RANKING = {
     "COEP Tech Pune": 1,
@@ -22,22 +22,16 @@ COLLEGE_RANKING = {
 }
 
 # =========================
-# RANK → PERCENTILE (APPROX)
+# RANK → PERCENTILE
 # =========================
 def rank_to_percentile(rank):
     if rank <= 100: return 99.95
-    elif rank <= 200: return 99.90
-    elif rank <= 300: return 99.85
     elif rank <= 500: return 99.75
-    elif rank <= 700: return 99.65
     elif rank <= 1000: return 99.50
-    elif rank <= 2000: return 98.80
     elif rank <= 3000: return 98.00
     elif rank <= 5000: return 97.00
-    elif rank <= 8000: return 95.50
-    elif rank <= 12000: return 93.00
-    elif rank <= 20000: return 90.00
-    else: return 85.00
+    elif rank <= 10000: return 95.00
+    else: return 90.00
 
 # =========================
 # LOAD CSV
@@ -46,16 +40,16 @@ def load_colleges():
     data = []
     with open("colleges.csv", encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        for row in reader:
-            row["cutoff"] = float(row["cutoff"])
-            data.append(row)
+        for r in reader:
+            r["cutoff"] = float(r["cutoff"])
+            data.append(r)
     return data
 
 # =========================
-# MAIN ROUTE
+# ROUTE
 # =========================
 @app.route("/", methods=["GET", "POST"])
-def home():
+def index():
     results = []
     summary = ""
 
@@ -65,7 +59,7 @@ def home():
         seat_type = request.form.get("seat_type", "HU")
 
         your_percentile = rank_to_percentile(rank)
-        raw = load_colleges()
+        rows = load_colleges()
 
         grouped = defaultdict(lambda: {
             "college": "",
@@ -74,28 +68,25 @@ def home():
             "ambitious": []
         })
 
-        for r in raw:
-            if r["category"] != category:
-                continue
-            if r["seat_type"] != seat_type:
-                continue
-            if your_percentile < r["cutoff"]:
+        for r in rows:
+            if r["category"] != category or r["seat_type"] != seat_type:
                 continue
 
-            margin = your_percentile - r["cutoff"]
+            if your_percentile >= r["cutoff"]:
+                margin = round(your_percentile - r["cutoff"], 2)
 
-            if margin >= 5:
-                chance = "safe"
-            elif margin >= 1:
-                chance = "moderate"
-            else:
-                chance = "ambitious"
+                if margin >= 5:
+                    chance = "safe"
+                elif margin >= 1:
+                    chance = "moderate"
+                else:
+                    chance = "ambitious"
 
-            college = r["college"]
-            grouped[college]["college"] = college
-            grouped[college][chance].append(r["branch"])
+                college = r["college"]
+                grouped[college]["college"] = college
+                grouped[college][chance].append(r["branch"])
 
-        # Sort colleges by priority
+        # Convert to list + sort by ranking
         results = sorted(
             grouped.values(),
             key=lambda x: COLLEGE_RANKING.get(x["college"], 999)

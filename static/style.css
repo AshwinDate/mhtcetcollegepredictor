@@ -1,16 +1,17 @@
 body {
     margin: 0;
-    font-family: Segoe UI, Arial, sans-serif;
-    background: linear-gradient(135deg, #eef2f7, #f9fbfd);
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #333;
 }
 
 .container {
     max-width: 1100px;
     margin: 40px auto;
-    background: white;
+    background: #ffffff;
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 
 h1 {
@@ -20,25 +21,26 @@ h1 {
 
 .subtitle {
     text-align: center;
-    color: #666;
     margin-bottom: 30px;
+    color: #555;
 }
 
 .form-card {
     max-width: 500px;
-    margin: 0 auto 30px auto;
+    margin: auto;
+    padding: 20px;
 }
 
 label {
-    font-weight: 600;
     display: block;
-    margin-top: 12px;
+    margin-top: 15px;
+    font-weight: 600;
 }
 
 input, select {
     width: 100%;
     padding: 10px;
-    margin-top: 6px;
+    margin-top: 5px;
     border-radius: 6px;
     border: 1px solid #ccc;
 }
@@ -47,20 +49,22 @@ button {
     width: 100%;
     margin-top: 20px;
     padding: 12px;
-    background: #1e88e5;
+    background: linear-gradient(135deg, #1e88e5, #0b3c5d);
     color: white;
-    font-weight: bold;
     border: none;
     border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
 }
 
 .summary {
+    margin: 25px 0;
     font-weight: bold;
-    margin: 20px 0;
+    text-align: center;
     color: #0b3c5d;
 }
 
+/* ===== TABLE ===== */
 .results-table {
     width: 100%;
     border-collapse: collapse;
@@ -70,48 +74,60 @@ button {
     background: #0b3c5d;
     color: white;
     padding: 12px;
-    text-align: left;
 }
 
 .results-table td {
-    padding: 14px;
+    padding: 15px;
     border-bottom: 1px solid #ddd;
     vertical-align: top;
 }
 
 .college-name {
     font-weight: bold;
-    font-size: 16px;
+    width: 220px;
 }
 
-.branch-group {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
+/* ===== BRANCH PILLS ===== */
+.branch-cell {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.branch-group ul {
-    margin: 6px 0 0 18px;
+.branch-pill {
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
 }
 
-.branch-group.safe {
-    background: #e8f7ee;
-    border-left: 6px solid #16a34a;
+.branch-pill small {
+    font-size: 12px;
+    font-weight: 700;
 }
 
-.branch-group.moderate {
-    background: #fff7e6;
-    border-left: 6px solid #f59e0b;
+/* COLORS */
+.safe {
+    background: #dcfce7;
+    color: #065f46;
 }
 
-.branch-group.ambitious {
-    background: #fdecec;
-    border-left: 6px solid #dc2626;
+.moderate {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.ambitious {
+    background: #fee2e2;
+    color: #7f1d1d;
 }
 
 .footer {
     margin-top: 30px;
+    text-align: center;
     font-size: 13px;
     color: #777;
-    text-align: center;
 }
