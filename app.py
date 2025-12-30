@@ -4,9 +4,6 @@ from collections import defaultdict
 
 app = Flask(__name__)
 
-# =========================
-# COLLEGE PRIORITY
-# =========================
 COLLEGE_RANKING = {
     "COEP Tech Pune": 1,
     "VJTI Mumbai": 2,
@@ -21,9 +18,6 @@ COLLEGE_RANKING = {
     "AISSMS COE Pune": 11,
 }
 
-# =========================
-# RANK → PERCENTILE
-# =========================
 def rank_to_percentile(rank):
     if rank <= 100: return 99.95
     elif rank <= 500: return 99.75
@@ -33,9 +27,6 @@ def rank_to_percentile(rank):
     elif rank <= 10000: return 95.00
     else: return 90.00
 
-# =========================
-# LOAD CSV
-# =========================
 def load_colleges():
     data = []
     with open("colleges.csv", encoding="utf-8") as f:
@@ -45,9 +36,6 @@ def load_colleges():
             data.append(r)
     return data
 
-# =========================
-# ROUTE
-# =========================
 @app.route("/", methods=["GET", "POST"])
 def index():
     results = []
@@ -75,9 +63,9 @@ def index():
             if your_percentile >= r["cutoff"]:
                 margin = round(your_percentile - r["cutoff"], 2)
 
-                if margin >= 5:
+                if margin >= 1.0:
                     chance = "safe"
-                elif margin >= 1:
+                elif -4.0 <= margin < 1.0:
                     chance = "moderate"
                 else:
                     chance = "ambitious"
@@ -86,7 +74,6 @@ def index():
                 grouped[college]["college"] = college
                 grouped[college][chance].append(r["branch"])
 
-        # Convert to list + sort by ranking
         results = sorted(
             grouped.values(),
             key=lambda x: COLLEGE_RANKING.get(x["college"], 999)
