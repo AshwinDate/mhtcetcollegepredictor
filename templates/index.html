@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <title>MHT CET College Predictor 2025</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO -->
+    <meta name="description"
+          content="MHT CET College Predictor 2025 – Get college and branch recommendations with Safe, Moderate and Ambitious tags based on previous cutoff trends.">
+
+    <meta name="keywords"
+          content="MHT CET college predictor, MHT CET cutoff, Maharashtra engineering admission, CET predictor">
+
+    <meta name="author" content="Ashwin Date">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
@@ -11,11 +22,15 @@
 <div class="container">
 
     <h1>MHT-CET College Predictor</h1>
-    <p class="subtitle">Based on previous CAP round cutoffs</p>
+    <p class="subtitle">
+        Branch-wise eligibility based on previous CAP round cutoff trends
+    </p>
 
+    <!-- FORM -->
     <form method="post" class="form-card">
+
         <label>Merit Rank</label>
-        <input type="number" name="rank" required>
+        <input type="number" name="rank" placeholder="Enter your CET merit rank" required>
 
         <label>Category</label>
         <select name="category">
@@ -24,6 +39,7 @@
             <option>SC</option>
             <option>ST</option>
             <option>EWS</option>
+            <option>VJDT</option>
         </select>
 
         <label>University Type</label>
@@ -41,35 +57,38 @@
         <button type="submit">Get Recommendations</button>
     </form>
 
+    <!-- RESULTS -->
     {% if results %}
-    <p class="summary">{{ summary }}</p>
+        <p class="summary">{{ summary }}</p>
 
-    <table class="results-table">
-        <thead>
-            <tr>
-                <th>College</th>
-                <th>Branches Available</th>
-                <th>Admission Chance</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for r in results %}
-            <tr class="{{ r.chance | lower }}">
-                <td class="college-name">{{ r.college }}</td>
-                <td>
-                    {% for b in r.branches %}
-                        • {{ b }}<br>
-                    {% endfor %}
-                </td>
-                <td class="chance-cell {{ r.chance | lower }}">{{ r.chance }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th>College</th>
+                    <th>Eligible Branches (with Admission Chance)</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            {% for c in results %}
+                <tr>
+                    <td class="college-name">{{ c.college }}</td>
+                    <td>
+                        {% for b in c.branches %}
+                            <span class="branch {{ b.chance | lower }}">
+                                {{ b.branch }} – {{ b.chance }}
+                            </span><br>
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     {% endif %}
 
     <div class="footer">
-        Disclaimer: For guidance only. Final admissions depend on CET CAP rounds.
+        Disclaimer: This predictor is for guidance only.
+        Final admissions depend on official CAP rounds conducted by CET Cell Maharashtra.
     </div>
 
 </div>
