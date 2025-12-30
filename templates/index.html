@@ -102,35 +102,48 @@
     } %}
 
     <!-- RESULTS TABLE -->
-    <table>
-        <tr>
-            <th>College</th>
-            <th>Branch</th>
-            <th>Category</th>
-            <th>University</th>
-            <th>Your %ile</th>
-            <th>Margin</th>
-            <th>Possibility</th>
-        </tr>
+    {% set college_images = {
+    "VJTI Mumbai": "vjti_mumbai.jpg",
+    "COEP Tech Pune": "coep_pune.jpg",
+    "Walchand COE Sangli": "wce_sangli.jpg",
+    "SPCE Mumbai": "spce_mumbai.jpg",
+    "PICT Pune": "pict_pune.jpg",
+    "VIT Pune": "vit_pune.jpg",
+    "PCCOE Pune": "pccoe_pune.jpg",
+    "DJ Sanghvi": "dj_sanghvi.jpg",
+    "MIT Pune": "mit_pune.jpg",
+    "PVG Pune": "pvg_pune.jpg",
+    "AISSMS Pune": "aissms_pune.jpg"
+} %}
 
-        {% for r in results %}
-        <tr class="{{ r.chance | lower }}">
-            <td class="college-cell">
-                <img src="{{ url_for('static',
-                    filename='images/colleges/' ~ college_images.get(r.college, 'default.jpg')) }}"
-                     alt="{{ r.college }}"
-                     class="college-img">
-                <span>{{ r.college }}</span>
-            </td>
-            <td>{{ r.branch }}</td>
-            <td>{{ r.category }}</td>
-            <td>{{ "Home" if r.seat_type == "HU" else "Other" }}</td>
-            <td>{{ r.percentile }}</td>
-            <td>{{ r.margin }}</td>
-            <td>{{ r.chance }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+<div class="college-grid">
+
+{% for college, group in results|groupby('college') %}
+    {% set first = group[0] %}
+
+    <div class="college-card {{ first.chance | lower }}">
+        <img src="{{ url_for('static',
+            filename='images/colleges/' ~ college_images.get(college, 'default.jpg')) }}"
+             alt="{{ college }}"
+             class="college-photo">
+
+        <h3>{{ college }}</h3>
+
+        <p class="branches">
+            <strong>Branches available:</strong><br>
+            {% for r in group %}
+                • {{ r.branch }}<br>
+            {% endfor %}
+        </p>
+
+        <div class="chance-label {{ first.chance | lower }}">
+            {{ first.chance }}
+        </div>
+    </div>
+
+{% endfor %}
+
+</div>
 
     {% endif %}
 
