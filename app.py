@@ -5,7 +5,7 @@ from collections import defaultdict
 app = Flask(__name__)
 
 # =========================
-# COLLEGE PRIORITY (LOWER = BETTER)
+# COLLEGE PRIORITY
 # =========================
 COLLEGE_RANKING = {
     "COEP Tech Pune": 1,
@@ -59,7 +59,7 @@ def load_colleges():
 # =========================
 @app.route("/", methods=["GET", "POST"])
 def home():
-    results = []
+    colleges_output = []
     summary = ""
 
     if request.method == "POST":
@@ -90,39 +90,30 @@ def home():
 
                 grouped[c["college"]].append({
                     "branch": c["branch"],
-                    "margin": margin,
-                    "chance": chance
+                    "chance": chance,
+                    "margin": margin
                 })
 
-        # ===== Convert grouped → list
         for college, branches in grouped.items():
-            best_margin = max(b["margin"] for b in branches)
-            best_chance = sorted(
-                [b["chance"] for b in branches],
-                key=lambda x: {"Safe": 1, "Moderate": 2, "Ambitious": 3}[x]
-            )[0]
-
-            results.append({
+            colleges_output.append({
                 "college": college,
-                "branches": sorted(set(b["branch"] for b in branches)),
-                "chance": best_chance,
-                "best_margin": best_margin,
-                "rank": COLLEGE_RANKING.get(college, 999)
+                "rank": COLLEGE_RANKING.get(college, 999),
+                "branches": sorted(
+                    branches,
+                    key=lambda b: {"Safe": 1, "Moderate": 2, "Ambitious": 3}[b["chance"]]
+                )
             })
 
-        # ===== SORT
-        if sort_by == "college":
-            results.sort(key=lambda x: (x["rank"], -x["best_margin"]))
-        elif sort_by == "chance":
-            results.sort(key=lambda x: (
-                {"Safe": 1, "Moderate": 2, "Ambitious": 3}[x["chance"]],
-                x["rank"]
-            ))
+        # SORT BY COLLEGE PRIORITY
+        colleges_output.sort(key=lambda x: x["rank"])
 
-        summary = f"{len(results)} colleges recommended (Rank {rank} ≈ {your_percentile}%)"
+        summary = f"{len(colleges_output)} colleges recommended (Rank {rank} ≈ {your_percentile}%)"
 
-    return render_template("index.html", results=results, summary=summary)
-
+    return render_template(
+        "index.html",
+        results=colleges_output,
+        summary=summary
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)
