@@ -1,8 +1,7 @@
 body {
     margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #333;
+    font-family: Segoe UI, Arial, sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #f9fbfd);
 }
 
 .container {
@@ -10,8 +9,8 @@ body {
     margin: 40px auto;
     background: white;
     padding: 30px;
-    border-radius: 14px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
 h1 {
@@ -22,18 +21,18 @@ h1 {
 .subtitle {
     text-align: center;
     color: #666;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .form-card {
     max-width: 500px;
-    margin: auto;
+    margin: 0 auto 30px auto;
 }
 
 label {
     font-weight: 600;
-    margin-top: 12px;
     display: block;
+    margin-top: 12px;
 }
 
 input, select {
@@ -48,81 +47,71 @@ button {
     width: 100%;
     margin-top: 20px;
     padding: 12px;
-    background: linear-gradient(135deg, #1e88e5, #0b3c5d);
-    border: none;
+    background: #1e88e5;
     color: white;
     font-weight: bold;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .summary {
-    margin-top: 25px;
     font-weight: bold;
-    text-align: center;
+    margin: 20px 0;
+    color: #0b3c5d;
 }
 
 .results-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 30px;
 }
 
 .results-table th {
     background: #0b3c5d;
     color: white;
-    padding: 14px;
+    padding: 12px;
     text-align: left;
 }
 
 .results-table td {
     padding: 14px;
     border-bottom: 1px solid #ddd;
+    vertical-align: top;
 }
-
-tr.safe { background: #e8f5e9; }
-tr.moderate { background: #fff8e1; }
-tr.ambitious { background: #fdecea; }
 
 .college-name {
     font-weight: bold;
+    font-size: 16px;
 }
 
-.chance-cell {
-    text-align: center;
-    font-weight: bold;
+.branch-group {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
 }
 
-.chance-cell.safe { color: #166534; }
-.chance-cell.moderate { color: #92400e; }
-.chance-cell.ambitious { color: #991b1b; }
+.branch-group ul {
+    margin: 6px 0 0 18px;
+}
+
+.branch-group.safe {
+    background: #e8f7ee;
+    border-left: 6px solid #16a34a;
+}
+
+.branch-group.moderate {
+    background: #fff7e6;
+    border-left: 6px solid #f59e0b;
+}
+
+.branch-group.ambitious {
+    background: #fdecec;
+    border-left: 6px solid #dc2626;
+}
 
 .footer {
     margin-top: 30px;
     font-size: 13px;
-    text-align: center;
     color: #777;
-}
-.branch {
-    display: inline-block;
-    padding: 6px 10px;
-    margin: 4px 0;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.branch.safe {
-    background: #dcfce7;
-    color: #166534;
-}
-
-.branch.moderate {
-    background: #fef3c7;
-    color: #92400e;
-}
-
-.branch.ambitious {
-    background: #fee2e2;
-    color: #991b1b;
+    text-align: center;
 }

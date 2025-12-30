@@ -5,7 +5,7 @@ from collections import defaultdict
 app = Flask(__name__)
 
 # =========================
-# COLLEGE PRIORITY
+# COLLEGE PRIORITY (LOWER = BETTER)
 # =========================
 COLLEGE_RANKING = {
     "COEP Tech Pune": 1,
@@ -18,11 +18,11 @@ COLLEGE_RANKING = {
     "DJ Sanghvi": 8,
     "PVG COET Pune": 9,
     "MIT Pune": 10,
-    "AISSMS COE Pune": 11
+    "AISSMS COE Pune": 11,
 }
 
 # =========================
-# RANK → PERCENTILE
+# RANK → PERCENTILE (APPROX)
 # =========================
 def rank_to_percentile(rank):
     if rank <= 100: return 99.95
@@ -46,12 +46,9 @@ def load_colleges():
     data = []
     with open("colleges.csv", encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        for r in reader:
-            try:
-                r["cutoff"] = float(r["cutoff"])
-                data.append(r)
-            except:
-                continue
+        for row in reader:
+            row["cutoff"] = float(row["cutoff"])
+            data.append(row)
     return data
 
 # =========================
@@ -59,61 +56,54 @@ def load_colleges():
 # =========================
 @app.route("/", methods=["GET", "POST"])
 def home():
-    colleges_output = []
+    results = []
     summary = ""
 
     if request.method == "POST":
         rank = int(request.form["rank"])
         category = request.form.get("category") or "GENERAL"
         seat_type = request.form.get("seat_type", "HU")
-        sort_by = request.form["sort_by"]
 
         your_percentile = rank_to_percentile(rank)
-        rows = load_colleges()
+        raw = load_colleges()
 
-        grouped = defaultdict(list)
+        grouped = defaultdict(lambda: {
+            "college": "",
+            "safe": [],
+            "moderate": [],
+            "ambitious": []
+        })
 
-        for c in rows:
-            if c["category"] != category:
+        for r in raw:
+            if r["category"] != category:
                 continue
-            if c["seat_type"] != seat_type:
+            if r["seat_type"] != seat_type:
                 continue
-            if your_percentile >= c["cutoff"]:
-                margin = round(your_percentile - c["cutoff"], 2)
+            if your_percentile < r["cutoff"]:
+                continue
 
-                if margin >= 5:
-                    chance = "Safe"
-                elif margin >= 1:
-                    chance = "Moderate"
-                else:
-                    chance = "Ambitious"
+            margin = your_percentile - r["cutoff"]
 
-                grouped[c["college"]].append({
-                    "branch": c["branch"],
-                    "chance": chance,
-                    "margin": margin
-                })
+            if margin >= 5:
+                chance = "safe"
+            elif margin >= 1:
+                chance = "moderate"
+            else:
+                chance = "ambitious"
 
-        for college, branches in grouped.items():
-            colleges_output.append({
-                "college": college,
-                "rank": COLLEGE_RANKING.get(college, 999),
-                "branches": sorted(
-                    branches,
-                    key=lambda b: {"Safe": 1, "Moderate": 2, "Ambitious": 3}[b["chance"]]
-                )
-            })
+            college = r["college"]
+            grouped[college]["college"] = college
+            grouped[college][chance].append(r["branch"])
 
-        # SORT BY COLLEGE PRIORITY
-        colleges_output.sort(key=lambda x: x["rank"])
+        # Sort colleges by priority
+        results = sorted(
+            grouped.values(),
+            key=lambda x: COLLEGE_RANKING.get(x["college"], 999)
+        )
 
-        summary = f"{len(colleges_output)} colleges recommended (Rank {rank} ≈ {your_percentile}%)"
+        summary = f"{len(results)} top colleges recommended (Rank {rank} ≈ {your_percentile}%)"
 
-    return render_template(
-        "index.html",
-        results=colleges_output,
-        summary=summary
-    )
+    return render_template("index.html", results=results, summary=summary)
 
 if __name__ == "__main__":
     app.run(debug=True)

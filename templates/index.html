@@ -2,39 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MHT CET College Predictor 2025</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- SEO -->
-    <meta name="description"
-          content="MHT CET College Predictor 2025 – Get college and branch recommendations with Safe, Moderate and Ambitious tags based on previous cutoff trends.">
-
-    <meta name="keywords"
-          content="MHT CET college predictor, MHT CET cutoff, Maharashtra engineering admission, CET predictor">
-
-    <meta name="author" content="Ashwin Date">
-
-    <!-- CSS -->
+    <title>MHT CET College Predictor</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
+
 <div class="container">
 
-    <h1>MHT-CET College Predictor</h1>
-    <p class="subtitle">
-        Branch-wise eligibility based on previous CAP round cutoff trends
-    </p>
+    <h1>MHT-CET College Recommendation System</h1>
+    <p class="subtitle">Branch-wise admission chances based on previous cutoffs</p>
 
-    <!-- FORM -->
     <form method="post" class="form-card">
-
         <label>Merit Rank</label>
-        <input type="number" name="rank" placeholder="Enter your CET merit rank" required>
+        <input type="number" name="rank" required>
 
         <label>Category</label>
         <select name="category">
-            <option value="">GENERAL</option>
+            <option>GENERAL</option>
             <option>OBC</option>
             <option>SC</option>
             <option>ST</option>
@@ -48,49 +33,71 @@
             <option value="OHU">Other Than Home University</option>
         </select>
 
-        <label>Arrange Results By</label>
-        <select name="sort_by">
-            <option value="college">Top Colleges First</option>
-            <option value="chance">Admission Possibility</option>
-        </select>
-
         <button type="submit">Get Recommendations</button>
     </form>
 
-    <!-- RESULTS -->
     {% if results %}
-        <p class="summary">{{ summary }}</p>
+    <p class="summary">{{ summary }}</p>
 
-        <table class="results-table">
-            <thead>
-                <tr>
-                    <th>College</th>
-                    <th>Eligible Branches (with Admission Chance)</th>
-                </tr>
-            </thead>
+    <table class="results-table">
+        <thead>
+            <tr>
+                <th>College</th>
+                <th>Branch-wise Admission Possibility</th>
+            </tr>
+        </thead>
 
-            <tbody>
-            {% for c in results %}
-                <tr>
-                    <td class="college-name">{{ c.college }}</td>
-                    <td>
-                        {% for b in c.branches %}
-                            <span class="branch {{ b.chance | lower }}">
-                                {{ b.branch }} – {{ b.chance }}
-                            </span><br>
+        <tbody>
+        {% for c in results %}
+        <tr>
+            <td class="college-name">{{ c.college }}</td>
+            <td>
+
+                {% if c.safe %}
+                <div class="branch-group safe">
+                    <strong>🟢 Safe to Get</strong>
+                    <ul>
+                        {% for b in c.safe %}
+                        <li>{{ b }}</li>
                         {% endfor %}
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+                    </ul>
+                </div>
+                {% endif %}
+
+                {% if c.moderate %}
+                <div class="branch-group moderate">
+                    <strong>🟡 Moderate Chance</strong>
+                    <ul>
+                        {% for b in c.moderate %}
+                        <li>{{ b }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+                {% if c.ambitious %}
+                <div class="branch-group ambitious">
+                    <strong>🔴 Hard / Ambitious</strong>
+                    <ul>
+                        {% for b in c.ambitious %}
+                        <li>{{ b }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
     {% endif %}
 
     <div class="footer">
-        Disclaimer: This predictor is for guidance only.
-        Final admissions depend on official CAP rounds conducted by CET Cell Maharashtra.
+        Disclaimer: Guidance based on previous CAP round cutoffs only.
     </div>
 
 </div>
+
 </body>
 </html>
