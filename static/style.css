@@ -1,19 +1,22 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #eef2f7, #f9fbfd);
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #333;
 }
 
 .container {
     max-width: 1100px;
-    margin: 30px auto;
-    background: #fff;
+    margin: 40px auto;
+    background: white;
     padding: 30px;
-    border-radius: 12px;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 
 h1 {
     text-align: center;
+    color: #0b3c5d;
 }
 
 .subtitle {
@@ -23,84 +26,80 @@ h1 {
 }
 
 .form-card {
-    max-width: 450px;
+    max-width: 500px;
     margin: auto;
-    background: #f8fafc;
-    padding: 20px;
-    border-radius: 10px;
 }
 
 label {
-    font-weight: bold;
+    font-weight: 600;
+    margin-top: 12px;
     display: block;
-    margin-top: 15px;
 }
 
 input, select {
     width: 100%;
     padding: 10px;
-    margin-top: 5px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
 button {
-    margin-top: 20px;
     width: 100%;
+    margin-top: 20px;
     padding: 12px;
-    background: #2563eb;
-    color: white;
+    background: linear-gradient(135deg, #1e88e5, #0b3c5d);
     border: none;
+    color: white;
+    font-weight: bold;
     border-radius: 8px;
-    font-size: 16px;
+    cursor: pointer;
 }
 
 .summary {
-    text-align: center;
     margin-top: 25px;
     font-weight: bold;
+    text-align: center;
 }
 
-.college-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 30px;
 }
 
-.college-card {
-    padding: 15px;
-    border-radius: 14px;
-    text-align: center;
-    background: #fff;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.college-photo {
-    width: 100%;
-    height: 150px;
-    object-fit: contain;
-    background: #f3f4f6;
-    border-radius: 10px;
-}
-
-.safe { border-top: 6px solid #16a34a; }
-.moderate { border-top: 6px solid #f59e0b; }
-.ambitious { border-top: 6px solid #dc2626; }
-
-.chance-label {
-    margin-top: 12px;
-    padding: 8px;
-    border-radius: 6px;
+.results-table th {
+    background: #0b3c5d;
     color: white;
+    padding: 14px;
+    text-align: left;
+}
+
+.results-table td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr.safe { background: #e8f5e9; }
+tr.moderate { background: #fff8e1; }
+tr.ambitious { background: #fdecea; }
+
+.college-name {
     font-weight: bold;
 }
 
-.chance-label.safe { background: #16a34a; }
-.chance-label.moderate { background: #f59e0b; }
-.chance-label.ambitious { background: #dc2626; }
+.chance-cell {
+    text-align: center;
+    font-weight: bold;
+}
+
+.chance-cell.safe { color: #166534; }
+.chance-cell.moderate { color: #92400e; }
+.chance-cell.ambitious { color: #991b1b; }
 
 .footer {
-    text-align: center;
+    margin-top: 30px;
     font-size: 13px;
-    margin-top: 40px;
+    text-align: center;
     color: #777;
 }

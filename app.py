@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import csv
+from collections import defaultdict
 
 app = Flask(__name__)
 
@@ -21,7 +22,7 @@ COLLEGE_RANKING = {
 }
 
 # =========================
-# RANK → PERCENTILE (APPROX)
+# RANK → PERCENTILE
 # =========================
 def rank_to_percentile(rank):
     if rank <= 100: return 99.95
@@ -45,9 +46,12 @@ def load_colleges():
     data = []
     with open("colleges.csv", encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        for row in reader:
-            row["cutoff"] = float(row["cutoff"])
-            data.append(row)
+        for r in reader:
+            try:
+                r["cutoff"] = float(r["cutoff"])
+                data.append(r)
+            except:
+                continue
     return data
 
 # =========================
@@ -65,70 +69,60 @@ def home():
         sort_by = request.form["sort_by"]
 
         your_percentile = rank_to_percentile(rank)
-        colleges = load_colleges()
+        rows = load_colleges()
 
-        # =========================
-        # FILTER & CALCULATE CHANCE
-        # =========================
-        raw = []
+        grouped = defaultdict(list)
 
-        for c in colleges:
+        for c in rows:
             if c["category"] != category:
                 continue
             if c["seat_type"] != seat_type:
                 continue
-            if your_percentile < c["cutoff"]:
-                continue
+            if your_percentile >= c["cutoff"]:
+                margin = round(your_percentile - c["cutoff"], 2)
 
-            margin = round(your_percentile - c["cutoff"], 2)
+                if margin >= 5:
+                    chance = "Safe"
+                elif margin >= 1:
+                    chance = "Moderate"
+                else:
+                    chance = "Ambitious"
 
-            if margin >= 5:
-                chance = "Safe"
-            elif margin >= 1:
-                chance = "Moderate"
-            else:
-                chance = "Ambitious"
+                grouped[c["college"]].append({
+                    "branch": c["branch"],
+                    "margin": margin,
+                    "chance": chance
+                })
 
-            raw.append({
-                "college": c["college"],
-                "branch": c["branch"],
-                "chance": chance,
-                "margin": margin
+        # ===== Convert grouped → list
+        for college, branches in grouped.items():
+            best_margin = max(b["margin"] for b in branches)
+            best_chance = sorted(
+                [b["chance"] for b in branches],
+                key=lambda x: {"Safe": 1, "Moderate": 2, "Ambitious": 3}[x]
+            )[0]
+
+            results.append({
+                "college": college,
+                "branches": sorted(set(b["branch"] for b in branches)),
+                "chance": best_chance,
+                "best_margin": best_margin,
+                "rank": COLLEGE_RANKING.get(college, 999)
             })
 
-        # =========================
-        # GROUP BY COLLEGE
-        # =========================
-        college_map = {}
-        for r in raw:
-            name = r["college"]
-            if name not in college_map:
-                college_map[name] = {
-                    "college": name,
-                    "rank": COLLEGE_RANKING.get(name, 999),
-                    "chance": r["chance"],
-                    "branches": []
-                }
-            college_map[name]["branches"].append(r["branch"])
+        # ===== SORT
+        if sort_by == "college":
+            results.sort(key=lambda x: (x["rank"], -x["best_margin"]))
+        elif sort_by == "chance":
+            results.sort(key=lambda x: (
+                {"Safe": 1, "Moderate": 2, "Ambitious": 3}[x["chance"]],
+                x["rank"]
+            ))
 
-        # =========================
-        # SORT COLLEGES (TOP FIRST)
-        # =========================
-        chance_priority = {"Safe": 1, "Moderate": 2, "Ambitious": 3}
-
-        results = sorted(
-            college_map.values(),
-            key=lambda x: (x["rank"], chance_priority[x["chance"]])
-        )
-
-        # =========================
-        # LIMIT TO TOP 12
-        # =========================
-        results = results[:12]
-
-        summary = f"{len(results)} top colleges recommended (Rank {rank} ≈ {your_percentile}%)"
+        summary = f"{len(results)} colleges recommended (Rank {rank} ≈ {your_percentile}%)"
 
     return render_template("index.html", results=results, summary=summary)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

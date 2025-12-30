@@ -3,77 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <title>MHT CET College Predictor 2025</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 <div class="container">
 
-<h1>MHT CET College Predictor</h1>
-<p class="subtitle">College recommendations based on previous CAP cutoff trends</p>
+    <h1>MHT-CET College Predictor</h1>
+    <p class="subtitle">Based on previous CAP round cutoffs</p>
 
-<div class="form-card">
-<form method="post">
-    <label>Merit Rank</label>
-    <input type="number" name="rank" required>
+    <form method="post" class="form-card">
+        <label>Merit Rank</label>
+        <input type="number" name="rank" required>
 
-    <label>Category</label>
-    <select name="category">
-        <option value="">GENERAL</option>
-        <option>OBC</option>
-        <option>SC</option>
-        <option>ST</option>
-        <option>EWS</option>
-        <option>VJDT</option>
-    </select>
+        <label>Category</label>
+        <select name="category">
+            <option value="">GENERAL</option>
+            <option>OBC</option>
+            <option>SC</option>
+            <option>ST</option>
+            <option>EWS</option>
+        </select>
 
-    <label>University Type</label>
-    <select name="seat_type">
-        <option value="HU">Home University</option>
-        <option value="OHU">Other Than Home University</option>
-    </select>
+        <label>University Type</label>
+        <select name="seat_type">
+            <option value="HU">Home University</option>
+            <option value="OHU">Other Than Home University</option>
+        </select>
 
-    <label>Arrange Results By</label>
-    <select name="sort_by">
-        <option value="college">Top Colleges First</option>
-        <option value="chance">Admission Possibility</option>
-    </select>
+        <label>Arrange Results By</label>
+        <select name="sort_by">
+            <option value="college">Top Colleges First</option>
+            <option value="chance">Admission Possibility</option>
+        </select>
 
-    <button type="submit">Get Recommendations</button>
-</form>
-</div>
+        <button type="submit">Get Recommendations</button>
+    </form>
 
-{% if summary %}
-<p class="summary">{{ summary }}</p>
-{% endif %}
+    {% if results %}
+    <p class="summary">{{ summary }}</p>
 
-{% if results %}
-<div class="college-grid">
-
-{% for c in results %}
-<div class="college-card {{ c.chance | lower }}">
-    <img src="{{ url_for('static', filename='images/colleges/default.jpg') }}" class="college-photo">
-
-    <h3>{{ c.college }}</h3>
-
-    <p class="branches">
-        <strong>Branches:</strong><br>
-        {% for b in c.branches %}
-        • {{ b }}<br>
+    <table class="results-table">
+        <thead>
+            <tr>
+                <th>College</th>
+                <th>Branches Available</th>
+                <th>Admission Chance</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for r in results %}
+            <tr class="{{ r.chance | lower }}">
+                <td class="college-name">{{ r.college }}</td>
+                <td>
+                    {% for b in r.branches %}
+                        • {{ b }}<br>
+                    {% endfor %}
+                </td>
+                <td class="chance-cell {{ r.chance | lower }}">{{ r.chance }}</td>
+            </tr>
         {% endfor %}
-    </p>
+        </tbody>
+    </table>
+    {% endif %}
 
-    <div class="chance-label {{ c.chance | lower }}">{{ c.chance }}</div>
-</div>
-{% endfor %}
-
-</div>
-{% endif %}
-
-<div class="footer">
-    Disclaimer: Predictions are based on previous years’ data. Final admissions depend on official CAP rounds.
-</div>
+    <div class="footer">
+        Disclaimer: For guidance only. Final admissions depend on CET CAP rounds.
+    </div>
 
 </div>
 </body>
