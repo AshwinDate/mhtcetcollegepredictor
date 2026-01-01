@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>MHT-CET College Predictor</title>
+
+    <!-- Responsive support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
@@ -10,15 +15,19 @@
 <div class="page">
 
     <h1>MHT-CET College Predictor</h1>
-    <p class="subtitle">Predict engineering colleges using MHT-CET rank</p>
+    <p class="subtitle">
+        Predict engineering colleges and branches using MHT-CET rank
+    </p>
 
+    <!-- FORM -->
     <form method="POST" class="form-box">
 
-        <label>MHT-CET Rank</label>
-        <input type="number" name="rank" placeholder="Enter your CET rank" required>
+        <label for="rank">MHT-CET Rank</label>
+        <input type="number" id="rank" name="rank"
+               placeholder="Enter your CET rank" required>
 
-        <label>Category</label>
-        <select name="category">
+        <label for="category">Category</label>
+        <select id="category" name="category">
             <option value="GENERAL">GENERAL</option>
             <option value="OBC">OBC</option>
             <option value="SC">SC</option>
@@ -27,14 +36,14 @@
             <option value="VJDT">VJDT</option>
         </select>
 
-        <label>University Type</label>
-        <select name="seat_type">
+        <label for="seat_type">University Type</label>
+        <select id="seat_type" name="seat_type">
             <option value="HU">Home University</option>
             <option value="OHU">Other Than Home University</option>
         </select>
 
-        <label>Ladies Quota</label>
-        <select name="ladies">
+        <label for="ladies">Ladies Quota</label>
+        <select id="ladies" name="ladies">
             <option value="NO">No</option>
             <option value="YES">Yes</option>
         </select>
@@ -42,36 +51,51 @@
         <button type="submit">Get College Recommendations</button>
     </form>
 
+    <!-- SUMMARY -->
     {% if summary %}
         <p class="summary">{{ summary }}</p>
     {% endif %}
 
+    <!-- RESULTS -->
     {% for c in results %}
         <div class="college-card">
             <h2>{{ c.college }}</h2>
 
             {% if c.safe %}
             <div class="group safe">
-                <strong>Safe</strong>
-                {% for b in c.safe %}<span>{{ b }}</span>{% endfor %}
+                <strong>Safe Options</strong>
+                {% for b in c.safe %}
+                    <span>{{ b }}</span>
+                {% endfor %}
             </div>
             {% endif %}
 
             {% if c.moderate %}
             <div class="group moderate">
-                <strong>Moderate</strong>
-                {% for b in c.moderate %}<span>{{ b }}</span>{% endfor %}
+                <strong>Moderate Chances</strong>
+                {% for b in c.moderate %}
+                    <span>{{ b }}</span>
+                {% endfor %}
             </div>
             {% endif %}
 
             {% if c.ambitious %}
             <div class="group ambitious">
-                <strong>Ambitious</strong>
-                {% for b in c.ambitious %}<span>{{ b }}</span>{% endfor %}
+                <strong>Ambitious Choices</strong>
+                {% for b in c.ambitious %}
+                    <span>{{ b }}</span>
+                {% endfor %}
             </div>
             {% endif %}
         </div>
     {% endfor %}
+
+    <!-- DISCLAIMER -->
+    <p class="disclaimer">
+        Disclaimer: Predictions are based on previous CAP round cut-off data.
+        Actual admissions depend on official CET Cell allotments and seat availability.
+        This tool is intended for guidance purposes only.
+    </p>
 
 </div>
 </body>

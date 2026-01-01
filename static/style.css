@@ -1,39 +1,41 @@
 * {
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
 }
 
 body {
     margin: 0;
-    background: linear-gradient(135deg, #e6eef6, #f4f8fb);
-    color: #0b2e4e;
+    background-color: #f1f4f7;
+    color: #1f2d3d;
 }
 
-/* MAIN WRAPPER */
+/* PAGE WRAPPER */
 .page {
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
     padding: 40px 20px;
 }
 
-/* TITLE */
+/* HEADER */
 h1 {
     text-align: center;
-    margin-bottom: 5px;
+    color: #0b2e4e;
+    margin-bottom: 6px;
 }
 
 .subtitle {
     text-align: center;
-    color: #5a748a;
-    margin-bottom: 30px;
+    color: #5f6f81;
+    margin-bottom: 35px;
+    font-size: 15px;
 }
 
-/* FORM */
+/* FORM BOX */
 .form-box {
     background: #ffffff;
-    padding: 22px;
-    border-radius: 10px;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+    padding: 24px;
+    border-radius: 6px;
+    border: 1px solid #d9e1ea;
     max-width: 420px;
     margin: auto;
 }
@@ -41,84 +43,105 @@ h1 {
 label {
     display: block;
     margin-top: 14px;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 14px;
 }
 
 input, select {
     width: 100%;
-    padding: 10px;
+    padding: 9px;
     margin-top: 6px;
-    border-radius: 6px;
-    border: 1px solid #cfd8e3;
+    border-radius: 4px;
+    border: 1px solid #b8c4d1;
+    font-size: 14px;
 }
 
 /* BUTTON */
 button {
     width: 100%;
-    margin-top: 20px;
-    padding: 12px;
-    background: linear-gradient(135deg, #0b3c5d, #1e88e5);
+    margin-top: 22px;
+    padding: 11px;
+    background-color: #0b3c5d;
     color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
 }
 
 button:hover {
-    opacity: 0.95;
+    background-color: #092f49;
 }
 
 /* SUMMARY */
 .summary {
     text-align: center;
-    margin: 25px 0 10px;
-    font-weight: bold;
+    margin: 30px 0 15px;
+    font-weight: 600;
+    color: #0b2e4e;
 }
 
-/* COLLEGE CARDS */
+/* COLLEGE CARD */
 .college-card {
     background: #ffffff;
-    margin-top: 25px;
-    padding: 18px;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+    margin-top: 24px;
+    padding: 18px 20px;
+    border-radius: 6px;
+    border: 1px solid #d9e1ea;
 }
 
 .college-card h2 {
-    margin-bottom: 10px;
+    margin: 0 0 10px;
+    color: #0b2e4e;
 }
 
 /* GROUPS */
 .group {
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 .group strong {
     display: block;
     margin-bottom: 6px;
-}
-
-.group span {
-    display: inline-block;
-    padding: 6px 10px;
-    border-radius: 14px;
-    margin: 4px 6px 4px 0;
     font-size: 14px;
 }
 
-/* COLORS */
+/* TAGS */
+.group span {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 4px 6px 4px 0;
+    font-size: 13px;
+    border: 1px solid transparent;
+}
+
+/* SAFE */
 .safe span {
-    background: #e6f7ec;
-    color: #1b7f3a;
+    background-color: #e6f4ea;
+    color: #1e6b3a;
+    border-color: #b7dfc3;
 }
 
+/* MODERATE */
 .moderate span {
-    background: #fff3cd;
-    color: #8a6d00;
+    background-color: #fff6e0;
+    color: #7a5a00;
+    border-color: #f1d48b;
 }
 
+/* AMBITIOUS */
 .ambitious span {
-    background: #f8d7da;
-    color: #8a1c1c;
+    background-color: #fdeaea;
+    color: #8b1e1e;
+    border-color: #f3b5b5;
+}
+
+/* DISCLAIMER */
+.disclaimer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 12px;
+    color: #6c7a89;
 }
