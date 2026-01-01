@@ -9,14 +9,14 @@
 }
 
 body {
-    background: radial-gradient(circle at top, #0f172a, #020617);
+    background: #0b1220; /* deep navy */
     color: #e5e7eb;
     min-height: 100vh;
 }
 
-/* Dark mode default */
+/* Dark mode is DEFAULT */
 body.dark {
-    background: radial-gradient(circle at top, #0f172a, #020617);
+    background: #0b1220;
     color: #e5e7eb;
 }
 
@@ -43,7 +43,7 @@ h1 {
 .subtitle {
     text-align: center;
     font-size: 15px;
-    color: #94a3b8;
+    color: #9ca3af;
     margin-bottom: 28px;
 }
 
@@ -57,9 +57,9 @@ h1 {
 }
 
 .toggle button {
-    background: #1e293b;
+    background: #111827;
     color: #e5e7eb;
-    border: none;
+    border: 1px solid #1f2933;
     padding: 8px 14px;
     border-radius: 8px;
     cursor: pointer;
@@ -67,7 +67,7 @@ h1 {
 }
 
 .toggle button:hover {
-    background: #334155;
+    background: #1f2933;
 }
 
 /* =========================
@@ -75,9 +75,9 @@ h1 {
 ========================= */
 .form-box {
     background: #020617;
-    border-radius: 16px;
+    border-radius: 14px;
     padding: 28px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+    border: 1px solid #1f2933;
     margin-bottom: 26px;
 }
 
@@ -86,40 +86,40 @@ h1 {
     margin-top: 14px;
     margin-bottom: 6px;
     font-size: 14px;
-    color: #cbd5f5;
+    color: #cbd5e1;
 }
 
 .form-box input,
 .form-box select {
     width: 100%;
     padding: 12px;
-    border-radius: 10px;
-    border: none;
+    border-radius: 8px;
+    border: 1px solid #1f2933;
     outline: none;
-    background: #0f172a;
+    background: #0b1220;
     color: #f8fafc;
     font-size: 15px;
 }
 
 .form-box input::placeholder {
-    color: #64748b;
+    color: #6b7280;
 }
 
 .form-box button {
     margin-top: 22px;
     width: 100%;
     padding: 14px;
-    border-radius: 12px;
+    border-radius: 10px;
     border: none;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     color: white;
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    background: #1d4ed8; /* formal blue */
 }
 
 .form-box button:hover {
-    opacity: 0.92;
+    background: #1e40af;
 }
 
 /* =========================
@@ -129,7 +129,7 @@ h1 {
     text-align: center;
     margin: 22px 0;
     font-size: 15px;
-    color: #38bdf8;
+    color: #60a5fa;
     font-weight: 600;
 }
 
@@ -138,11 +138,11 @@ h1 {
 ========================= */
 .college-card {
     background: #020617;
-    border-left: 6px solid #38bdf8;
+    border-left: 5px solid #1d4ed8;
     padding: 22px;
-    border-radius: 18px;
+    border-radius: 14px;
     margin-top: 26px;
-    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.6);
+    border: 1px solid #1f2933;
 }
 
 .college-card h2 {
@@ -152,12 +152,14 @@ h1 {
 }
 
 /* =========================
-   GROUP SECTIONS
+   GROUP SECTIONS (FORMAL)
 ========================= */
 .group {
     margin-top: 14px;
     padding: 14px;
-    border-radius: 14px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background: #f8fafc; /* neutral light */
 }
 
 .group strong {
@@ -165,33 +167,22 @@ h1 {
     margin-bottom: 10px;
     font-size: 14px;
     letter-spacing: 0.3px;
+    color: #1f2937;
 }
 
-/* SAFE – light green (soft) */
+/* SAFE */
 .group.safe {
-    background: linear-gradient(135deg, #d1fae5, #bbf7d0);
+    border-left: 4px solid #2563eb;
 }
 
-.group.safe strong {
-    color: #065f46;
-}
-
-/* MODERATE – light yellow (soft) */
+/* MODERATE */
 .group.moderate {
-    background: linear-gradient(135deg, #fef9c3, #fef08a);
+    border-left: 4px solid #475569;
 }
 
-.group.moderate strong {
-    color: #78350f;
-}
-
-/* AMBITIOUS – light red (soft) */
+/* AMBITIOUS */
 .group.ambitious {
-    background: linear-gradient(135deg, #fee2e2, #fecaca);
-}
-
-.group.ambitious strong {
-    color: #7f1d1d;
+    border-left: 4px solid #7c2d12;
 }
 
 /* =========================
@@ -204,9 +195,9 @@ h1 {
     border-radius: 999px;
     font-size: 14px;
     font-weight: 600;
-    background: #ffffff;
+    background: #e5e7eb;
     color: #111827; /* BLACK TEXT */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+    border: 1px solid #cbd5e1;
 }
 
 /* =========================
@@ -215,7 +206,7 @@ h1 {
 .disclaimer {
     margin-top: 40px;
     font-size: 13px;
-    color: #94a3b8;
+    color: #9ca3af;
     text-align: center;
     line-height: 1.5;
 }
