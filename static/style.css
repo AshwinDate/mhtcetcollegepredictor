@@ -1,147 +1,216 @@
+/* =========================
+   GLOBAL RESET
+========================= */
 * {
-    box-sizing: border-box;
-    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-}
-
-body {
     margin: 0;
-    background-color: #f1f4f7;
-    color: #1f2d3d;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* PAGE WRAPPER */
+/* =========================
+   PAGE BACKGROUND
+   Abstract + Gradient
+========================= */
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 20% 20%, #1e3a8a55, transparent 40%),
+        radial-gradient(circle at 80% 10%, #9333ea55, transparent 40%),
+        radial-gradient(circle at 50% 90%, #0ea5e955, transparent 45%),
+        linear-gradient(135deg, #0f172a, #020617);
+    color: #0f172a;
+}
+
+/* =========================
+   MAIN WRAPPER
+========================= */
 .page {
     max-width: 1000px;
-    margin: auto;
-    padding: 40px 20px;
+    margin: 60px auto;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 18px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 h1 {
     text-align: center;
-    color: #0b2e4e;
-    margin-bottom: 6px;
+    font-size: 38px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: 1px;
 }
 
 .subtitle {
     text-align: center;
-    color: #5f6f81;
-    margin-bottom: 35px;
-    font-size: 15px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #475569;
 }
 
-/* FORM BOX */
+/* =========================
+   FORM
+========================= */
 .form-box {
-    background: #ffffff;
-    padding: 24px;
-    border-radius: 6px;
-    border: 1px solid #d9e1ea;
+    margin: 40px auto;
     max-width: 420px;
-    margin: auto;
+    padding: 30px;
+    background: linear-gradient(145deg, #f8fafc, #eef2ff);
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15);
 }
 
-label {
+.form-box label {
     display: block;
-    margin-top: 14px;
+    margin-top: 18px;
     font-weight: 600;
     font-size: 14px;
+    color: #1e293b;
 }
 
-input, select {
+.form-box input,
+.form-box select {
     width: 100%;
-    padding: 9px;
     margin-top: 6px;
-    border-radius: 4px;
-    border: 1px solid #b8c4d1;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #c7d2fe;
     font-size: 14px;
+    background: #ffffff;
+    transition: all 0.2s ease;
 }
 
-/* BUTTON */
-button {
+.form-box input:focus,
+.form-box select:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px #6366f133;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.form-box button {
     width: 100%;
-    margin-top: 22px;
-    padding: 11px;
-    background-color: #0b3c5d;
-    color: white;
+    margin-top: 26px;
+    padding: 14px;
     border: none;
-    border-radius: 4px;
-    font-size: 15px;
-    font-weight: 600;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
     cursor: pointer;
+    color: #ffffff;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
+    transition: all 0.25s ease;
 }
 
-button:hover {
-    background-color: #092f49;
+.form-box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.65);
 }
 
-/* SUMMARY */
+/* =========================
+   SUMMARY
+========================= */
 .summary {
     text-align: center;
-    margin: 30px 0 15px;
+    margin: 25px 0;
+    font-size: 15px;
     font-weight: 600;
-    color: #0b2e4e;
+    color: #0f172a;
 }
 
-/* COLLEGE CARD */
+/* =========================
+   COLLEGE CARD
+========================= */
 .college-card {
-    background: #ffffff;
-    margin-top: 24px;
-    padding: 18px 20px;
-    border-radius: 6px;
-    border: 1px solid #d9e1ea;
+    margin-top: 35px;
+    padding: 28px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #ffffff, #f1f5f9);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.15);
+    border-left: 8px solid #6366f1;
 }
 
 .college-card h2 {
-    margin: 0 0 10px;
-    color: #0b2e4e;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 18px;
+    color: #0f172a;
 }
 
-/* GROUPS */
+/* =========================
+   BRANCH GROUPS
+========================= */
 .group {
-    margin-top: 12px;
+    margin-bottom: 14px;
+    padding: 14px;
+    border-radius: 12px;
 }
 
 .group strong {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     font-size: 14px;
-}
-
-/* TAGS */
-.group span {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 4px;
-    margin: 4px 6px 4px 0;
-    font-size: 13px;
-    border: 1px solid transparent;
+    letter-spacing: 0.5px;
 }
 
 /* SAFE */
-.safe span {
-    background-color: #e6f4ea;
-    color: #1e6b3a;
-    border-color: #b7dfc3;
+.group.safe {
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    border-left: 6px solid #16a34a;
+}
+
+.group.safe strong {
+    color: #166534;
 }
 
 /* MODERATE */
-.moderate span {
-    background-color: #fff6e0;
-    color: #7a5a00;
-    border-color: #f1d48b;
+.group.moderate {
+    background: linear-gradient(135deg, #fef9c3, #fde68a);
+    border-left: 6px solid #ca8a04;
+}
+
+.group.moderate strong {
+    color: #92400e;
 }
 
 /* AMBITIOUS */
-.ambitious span {
-    background-color: #fdeaea;
-    color: #8b1e1e;
-    border-color: #f3b5b5;
+.group.ambitious {
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
+    border-left: 6px solid #dc2626;
 }
 
-/* DISCLAIMER */
+.group.ambitious strong {
+    color: #7f1d1d;
+}
+
+/* =========================
+   BRANCH TAGS
+========================= */
+.group span {
+    display: inline-block;
+    margin: 6px 6px 0 0;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.8);
+    color: #0f172a;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   DISCLAIMER
+========================= */
 .disclaimer {
+    margin-top: 50px;
     text-align: center;
-    margin-top: 40px;
     font-size: 12px;
-    color: #6c7a89;
+    color: #64748b;
 }
