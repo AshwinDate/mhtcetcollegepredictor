@@ -1,4 +1,28 @@
 /* =========================
+   CSS VARIABLES (LIGHT MODE)
+========================= */
+:root {
+    --bg-main: linear-gradient(135deg, #0ea5e9, #6366f1, #9333ea);
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --accent: #2563eb;
+    --shadow: rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   DARK MODE VARIABLES
+========================= */
+body.dark {
+    --bg-main: linear-gradient(135deg, #020617, #020617);
+    --card-bg: #0f172a;
+    --text-main: #e5e7eb;
+    --text-muted: #9ca3af;
+    --accent: #38bdf8;
+    --shadow: rgba(0, 0, 0, 0.6);
+}
+
+/* =========================
    GLOBAL RESET
 ========================= */
 * {
@@ -10,16 +34,16 @@
 
 /* =========================
    PAGE BACKGROUND
-   Abstract + Gradient
 ========================= */
 body {
     min-height: 100vh;
     background:
-        radial-gradient(circle at 20% 20%, #1e3a8a55, transparent 40%),
-        radial-gradient(circle at 80% 10%, #9333ea55, transparent 40%),
-        radial-gradient(circle at 50% 90%, #0ea5e955, transparent 45%),
-        linear-gradient(135deg, #0f172a, #020617);
-    color: #0f172a;
+        radial-gradient(circle at 20% 20%, #22d3ee55, transparent 40%),
+        radial-gradient(circle at 80% 10%, #a855f755, transparent 40%),
+        radial-gradient(circle at 50% 90%, #38bdf855, transparent 45%),
+        var(--bg-main);
+    color: var(--text-main);
+    transition: background 0.4s, color 0.4s;
 }
 
 /* =========================
@@ -29,9 +53,10 @@ body {
     max-width: 1000px;
     margin: 60px auto;
     padding: 50px;
-    background: rgba(255, 255, 255, 0.92);
-    border-radius: 18px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+    background: var(--card-bg);
+    border-radius: 22px;
+    box-shadow: 0 35px 90px var(--shadow);
+    transition: background 0.4s;
 }
 
 /* =========================
@@ -39,9 +64,8 @@ body {
 ========================= */
 h1 {
     text-align: center;
-    font-size: 38px;
-    font-weight: 800;
-    color: #0f172a;
+    font-size: 40px;
+    font-weight: 900;
     letter-spacing: 1px;
 }
 
@@ -49,7 +73,27 @@ h1 {
     text-align: center;
     margin-top: 10px;
     font-size: 16px;
-    color: #475569;
+    color: var(--text-muted);
+}
+
+/* =========================
+   DARK MODE TOGGLE
+========================= */
+.toggle {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.toggle button {
+    background: linear-gradient(135deg, #2563eb, #9333ea);
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.6);
 }
 
 /* =========================
@@ -58,18 +102,20 @@ h1 {
 .form-box {
     margin: 40px auto;
     max-width: 420px;
-    padding: 30px;
-    background: linear-gradient(145deg, #f8fafc, #eef2ff);
-    border-radius: 16px;
-    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15);
+    padding: 32px;
+    background: linear-gradient(145deg, #f8fafc, #e0e7ff);
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+}
+
+body.dark .form-box {
+    background: linear-gradient(145deg, #020617, #020617);
 }
 
 .form-box label {
-    display: block;
     margin-top: 18px;
-    font-weight: 600;
-    font-size: 14px;
-    color: #1e293b;
+    display: block;
+    font-weight: 700;
 }
 
 .form-box input,
@@ -77,18 +123,16 @@ h1 {
     width: 100%;
     margin-top: 6px;
     padding: 12px 14px;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid #c7d2fe;
     font-size: 14px;
-    background: #ffffff;
-    transition: all 0.2s ease;
 }
 
-.form-box input:focus,
-.form-box select:focus {
-    outline: none;
-    border-color: #6366f1;
-    box-shadow: 0 0 0 3px #6366f133;
+body.dark .form-box input,
+body.dark .form-box select {
+    background: #020617;
+    color: #e5e7eb;
+    border-color: #1e293b;
 }
 
 /* =========================
@@ -98,31 +142,14 @@ h1 {
     width: 100%;
     margin-top: 26px;
     padding: 14px;
-    border: none;
-    border-radius: 12px;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 800;
+    border-radius: 14px;
+    border: none;
     cursor: pointer;
-    color: #ffffff;
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
-    transition: all 0.25s ease;
-}
-
-.form-box button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.65);
-}
-
-/* =========================
-   SUMMARY
-========================= */
-.summary {
-    text-align: center;
-    margin: 25px 0;
-    font-size: 15px;
-    font-weight: 600;
-    color: #0f172a;
+    color: white;
+    background: linear-gradient(135deg, #2563eb, #9333ea);
+    box-shadow: 0 15px 45px rgba(99, 102, 241, 0.6);
 }
 
 /* =========================
@@ -131,86 +158,96 @@ h1 {
 .college-card {
     margin-top: 35px;
     padding: 28px;
-    border-radius: 18px;
-    background: linear-gradient(145deg, #ffffff, #f1f5f9);
-    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.15);
-    border-left: 8px solid #6366f1;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #ffffff, #eef2ff);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);
+    border-left: 8px solid var(--accent);
 }
 
-.college-card h2 {
-    font-size: 22px;
-    font-weight: 800;
-    margin-bottom: 18px;
-    color: #0f172a;
+body.dark .college-card {
+    background: linear-gradient(145deg, #020617, #020617);
 }
 
 /* =========================
    BRANCH GROUPS
 ========================= */
 .group {
-    margin-bottom: 14px;
+    margin-top: 14px;
     padding: 14px;
-    border-radius: 12px;
+    border-radius: 14px;
 }
 
-.group strong {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-}
-
-/* SAFE */
-.group.safe {
-    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
-    border-left: 6px solid #16a34a;
-}
-
-.group.safe strong {
-    color: #166534;
-}
-
-/* MODERATE */
-.group.moderate {
-    background: linear-gradient(135deg, #fef9c3, #fde68a);
-    border-left: 6px solid #ca8a04;
-}
-
-.group.moderate strong {
-    color: #92400e;
-}
-
-/* AMBITIOUS */
-.group.ambitious {
-    background: linear-gradient(135deg, #fee2e2, #fecaca);
-    border-left: 6px solid #dc2626;
-}
-
-.group.ambitious strong {
-    color: #7f1d1d;
-}
-
-/* =========================
-   BRANCH TAGS
-========================= */
 .group span {
     display: inline-block;
     margin: 6px 6px 0 0;
-    padding: 6px 12px;
+    padding: 7px 14px;
     border-radius: 999px;
     font-size: 13px;
-    font-weight: 600;
-    background: rgba(255, 255, 255, 0.8);
-    color: #0f172a;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    font-weight: 700;
 }
 
+/* SAFE */
+.safe {
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+}
+.safe span { background: #dcfce7; }
+
+/* MODERATE */
+.moderate {
+    background: linear-gradient(135deg, #facc15, #fde047);
+}
+.moderate span { background: #fef9c3; }
+
+/* AMBITIOUS */
+.ambitious {
+    background: linear-gradient(135deg, #ef4444, #f87171);
+}
+.ambitious span { background: #fee2e2; }
 /* =========================
-   DISCLAIMER
+   VISUAL ENHANCEMENTS
 ========================= */
-.disclaimer {
-    margin-top: 50px;
+
+.divider {
+    width: 80px;
+    height: 4px;
+    margin: 18px auto 35px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #2563eb, #9333ea);
+}
+
+.results-title {
     text-align: center;
-    font-size: 12px;
-    color: #64748b;
+    margin-top: 50px;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+/* Summary */
+.summary {
+    text-align: center;
+    margin-top: 25px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+/* Disclaimer */
+.disclaimer {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* College title emphasis */
+.college-card h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+/* Group heading spacing */
+.group strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
 }
