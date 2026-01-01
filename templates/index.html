@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>MHT CET College Predictor 2025</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="MHT CET College Predictor based on rank, category, home university and ladies quota using previous years cutoff data.">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -12,70 +16,94 @@
 
 <div class="container">
 
-    <h1>MHT-CET College Recommendation System</h1>
-    <p class="subtitle">Branch-wise admission chances based on previous cutoffs</p>
+    <h1>MHT-CET College Predictor</h1>
+    <p class="subtitle">
+        Predict engineering colleges and branches using MHT-CET rank
+    </p>
 
-    <form method="post" class="form-card">
-        <label>Merit Rank</label>
-        <input type="number" name="rank" required>
+    <!-- ================= FORM ================= -->
+    <div class="form-card">
+        <form method="post">
 
-        <label>Category</label>
-        <select name="category">
-            <option>GENERAL</option>
-            <option>OBC</option>
-            <option>SC</option>
-            <option>ST</option>
-            <option>EWS</option>
-        </select>
+            <label>MHT-CET Rank</label>
+            <input type="number" name="rank" placeholder="Enter your CET rank" required>
 
-        <label>University Type</label>
-        <select name="seat_type">
-            <option value="HU">Home University</option>
-            <option value="OHU">Other Than Home University</option>
-        </select>
+            <label>Category</label>
+            <select name="category">
+                <option value="">GENERAL</option>
+                <option>GENERAL</option>
+                <option>OBC</option>
+                <option>SC</option>
+                <option>ST</option>
+                <option>EWS</option>
+                <option>VJDT</option>
+            </select>
 
-        <button type="submit">Get Recommendations</button>
-    </form>
+            <label>University Type</label>
+            <select name="seat_type">
+                <option value="HU" selected>Home University</option>
+                <option value="OHU">Other Than Home University</option>
+            </select>
 
+            <label>Ladies Quota</label>
+            <select name="ladies">
+                <option value="NO" selected>No</option>
+                <option value="YES">Yes</option>
+            </select>
+
+            <button type="submit">Get College Recommendations</button>
+
+        </form>
+    </div>
+
+    <!-- ================= SUMMARY ================= -->
+    {% if summary %}
+        <p class="summary">{{ summary }}</p>
+    {% endif %}
+
+    <!-- ================= RESULTS ================= -->
     {% if results %}
-    <p class="summary">{{ summary }}</p>
 
-    <table class="results-table">
-        <thead>
-            <tr>
-                <th>College</th>
-                <th>Eligible Branches</th>
-            </tr>
-        </thead>
-        <tbody>
+        {% for college in results %}
+        <div class="college-box">
 
-        {% for c in results %}
-        <tr>
-            <td class="college-name">{{ c.college }}</td>
-            <td class="branch-cell">
+            <h2 class="college-name">{{ college.college }}</h2>
 
-                {% for b in c.safe %}
-                    <span class="branch-pill safe">{{ b }} <small>Safe</small></span>
-                {% endfor %}
+            <div class="branch-section safe">
+                {% if college.safe %}
+                    <h4>🟢 Safe Branches</h4>
+                    {% for b in college.safe %}
+                        <span class="branch-tag safe">{{ b }}</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
 
-                {% for b in c.moderate %}
-                    <span class="branch-pill moderate">{{ b }} <small>Moderate</small></span>
-                {% endfor %}
+            <div class="branch-section moderate">
+                {% if college.moderate %}
+                    <h4>🟡 Moderate Branches</h4>
+                    {% for b in college.moderate %}
+                        <span class="branch-tag moderate">{{ b }}</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
 
-                {% for b in c.ambitious %}
-                    <span class="branch-pill ambitious">{{ b }} <small>Ambitious</small></span>
-                {% endfor %}
+            <div class="branch-section ambitious">
+                {% if college.ambitious %}
+                    <h4>🔴 Ambitious Branches</h4>
+                    {% for b in college.ambitious %}
+                        <span class="branch-tag ambitious">{{ b }}</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
 
-            </td>
-        </tr>
+        </div>
         {% endfor %}
 
-        </tbody>
-    </table>
     {% endif %}
 
     <div class="footer">
-        Disclaimer: Predictions are indicative only and based on previous CAP round data.
+        Disclaimer: Predictions are based on previous CAP round cutoffs.
+        Actual admissions depend on official CET Cell allotments.
     </div>
 
 </div>

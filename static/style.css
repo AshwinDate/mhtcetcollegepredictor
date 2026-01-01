@@ -1,133 +1,199 @@
+/* =========================
+   GLOBAL
+========================= */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #f9fbfd);
     color: #333;
 }
 
+/* =========================
+   CONTAINER
+========================= */
 .container {
     max-width: 1100px;
     margin: 40px auto;
     background: #ffffff;
-    padding: 30px;
+    padding: 30px 40px;
     border-radius: 14px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
 }
 
+/* =========================
+   HEADINGS
+========================= */
 h1 {
     text-align: center;
     color: #0b3c5d;
+    margin-bottom: 6px;
 }
 
 .subtitle {
     text-align: center;
+    color: #666;
+    font-size: 15px;
     margin-bottom: 30px;
-    color: #555;
 }
 
+/* =========================
+   FORM CARD
+========================= */
 .form-card {
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    max-width: 520px;
+    margin: 0 auto 30px auto;
 }
 
-label {
-    display: block;
-    margin-top: 15px;
+form label {
     font-weight: 600;
+    margin-top: 14px;
+    display: block;
 }
 
-input, select {
+input,
+select {
     width: 100%;
     padding: 10px;
-    margin-top: 5px;
-    border-radius: 6px;
+    margin-top: 6px;
+    border-radius: 8px;
     border: 1px solid #ccc;
+    font-size: 15px;
 }
 
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #0b3c5d;
+}
+
+/* =========================
+   BUTTON
+========================= */
 button {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 22px;
     padding: 12px;
-    background: linear-gradient(135deg, #1e88e5, #0b3c5d);
-    color: white;
+    background: linear-gradient(135deg, #0b3c5d, #1e88e5);
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.summary {
-    margin: 25px 0;
-    font-weight: bold;
-    text-align: center;
-    color: #0b3c5d;
-}
-
-/* ===== TABLE ===== */
-.results-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.results-table th {
-    background: #0b3c5d;
     color: white;
-    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.results-table td {
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-    vertical-align: top;
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(30, 136, 229, 0.4);
+}
+
+/* =========================
+   SUMMARY
+========================= */
+.summary {
+    margin-top: 25px;
+    font-weight: bold;
+    color: #0b3c5d;
+    text-align: center;
+}
+
+/* =========================
+   COLLEGE CARD
+========================= */
+.college-box {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 14px;
+    margin-top: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 .college-name {
-    font-weight: bold;
-    width: 220px;
+    margin: 0;
+    color: #0b3c5d;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 8px;
 }
 
-/* ===== BRANCH PILLS ===== */
-.branch-cell {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+/* =========================
+   BRANCH SECTIONS
+========================= */
+.branch-section {
+    margin-top: 14px;
 }
 
-.branch-pill {
-    padding: 8px 14px;
-    border-radius: 999px;
+.branch-section h4 {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+/* =========================
+   BRANCH TAGS
+========================= */
+.branch-tag {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 8px;
+    margin: 4px 6px 4px 0;
     font-size: 14px;
     font-weight: 600;
-    display: inline-flex;
-    gap: 6px;
-    align-items: center;
 }
 
-.branch-pill small {
-    font-size: 12px;
-    font-weight: 700;
-}
-
-/* COLORS */
-.safe {
+/* SAFE */
+.branch-tag.safe {
     background: #dcfce7;
-    color: #065f46;
+    color: #166534;
+    border: 1px solid #86efac;
 }
 
-.moderate {
+/* MODERATE */
+.branch-tag.moderate {
     background: #fef3c7;
     color: #92400e;
+    border: 1px solid #fde68a;
 }
 
-.ambitious {
+/* AMBITIOUS */
+.branch-tag.ambitious {
     background: #fee2e2;
-    color: #7f1d1d;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
 }
 
+/* =========================
+   FOOTER
+========================= */
 .footer {
-    margin-top: 30px;
-    text-align: center;
+    margin-top: 40px;
     font-size: 13px;
     color: #777;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .container {
+        margin: 15px;
+        padding: 22px;
+    }
+
+    .form-card {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
 }
