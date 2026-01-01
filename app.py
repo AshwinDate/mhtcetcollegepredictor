@@ -32,11 +32,15 @@ def rank_to_percentile(rank):
     elif rank <= 2000: return 99.00
     elif rank <= 4000: return 98.00
     elif rank <= 6000: return 97.00
+    elif rank <= 7000: return 96.00
     elif rank <= 8000: return 95.50
     elif rank <= 12000: return 93.00
     elif rank <= 20000: return 90.00
     elif rank <= 30000: return 87.00
-    else: return 82.00
+elif rank <= 40000: return 85.00
+elif rank <= 50000: return 83.00
+elif rank <= 60000: return 80.00
+    else: return 79.00
 
 # =========================
 # LOAD CSV DATA
