@@ -51,30 +51,24 @@
             <h2>{{ c.college }}</h2>
 
             {% if c.safe %}
-                <div class="group safe">
-                    <strong>Safe</strong>
-                    {% for b in c.safe %}
-                        <span>{{ b }}</span>
-                    {% endfor %}
-                </div>
+            <div class="group safe">
+                <strong>Safe</strong>
+                {% for b in c.safe %}<span>{{ b }}</span>{% endfor %}
+            </div>
             {% endif %}
 
             {% if c.moderate %}
-                <div class="group moderate">
-                    <strong>Moderate</strong>
-                    {% for b in c.moderate %}
-                        <span>{{ b }}</span>
-                    {% endfor %}
-                </div>
+            <div class="group moderate">
+                <strong>Moderate</strong>
+                {% for b in c.moderate %}<span>{{ b }}</span>{% endfor %}
+            </div>
             {% endif %}
 
             {% if c.ambitious %}
-                <div class="group ambitious">
-                    <strong>Ambitious</strong>
-                    {% for b in c.ambitious %}
-                        <span>{{ b }}</span>
-                    {% endfor %}
-                </div>
+            <div class="group ambitious">
+                <strong>Ambitious</strong>
+                {% for b in c.ambitious %}<span>{{ b }}</span>{% endfor %}
+            </div>
             {% endif %}
         </div>
     {% endfor %}
