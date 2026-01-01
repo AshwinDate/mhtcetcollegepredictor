@@ -167,31 +167,31 @@ h1 {
     letter-spacing: 0.3px;
 }
 
-/* SAFE – muted green */
+/* SAFE – light green (soft) */
 .group.safe {
-    background: linear-gradient(135deg, #2e7d32, #388e3c);
+    background: linear-gradient(135deg, #d1fae5, #bbf7d0);
 }
 
 .group.safe strong {
-    color: #e8f5e9;
+    color: #065f46;
 }
 
-/* MODERATE – muted yellow */
+/* MODERATE – light yellow (soft) */
 .group.moderate {
-    background: linear-gradient(135deg, #f9c74f, #f4b400);
+    background: linear-gradient(135deg, #fef9c3, #fef08a);
 }
 
 .group.moderate strong {
-    color: #1f2937;
+    color: #78350f;
 }
 
-/* AMBITIOUS – muted red */
+/* AMBITIOUS – light red (soft) */
 .group.ambitious {
-    background: linear-gradient(135deg, #b71c1c, #d32f2f);
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
 }
 
 .group.ambitious strong {
-    color: #fdecea;
+    color: #7f1d1d;
 }
 
 /* =========================
@@ -204,9 +204,9 @@ h1 {
     border-radius: 999px;
     font-size: 14px;
     font-weight: 600;
-    background: #f1f5f9;
+    background: #ffffff;
     color: #111827; /* BLACK TEXT */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
 }
 
 /* =========================
