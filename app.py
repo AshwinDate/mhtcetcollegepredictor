@@ -29,8 +29,9 @@ def rank_to_percentile(rank):
     elif rank <= 300: return 99.85
     elif rank <= 500: return 99.75
     elif rank <= 1000: return 99.50
-    elif rank <= 3000: return 98.00
-    elif rank <= 5000: return 97.00
+    elif rank <= 2000: return 99.00
+    elif rank <= 4000: return 98.00
+    elif rank <= 6000: return 97.00
     elif rank <= 8000: return 95.50
     elif rank <= 12000: return 93.00
     elif rank <= 20000: return 90.00
